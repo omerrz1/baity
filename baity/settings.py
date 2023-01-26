@@ -126,7 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'static')
+   BASE_DIR/"static",
 ]
 
 # Internationalization
