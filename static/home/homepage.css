@@ -1,6 +1,7 @@
 body{
     padding: 0;
     margin: 0;
+    background-image: 'bg.png';
 }
 
 .nave{
@@ -11,5 +12,7 @@ body{
 .buttons{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    margin-left: 10%;
+    color: whites;
+    margin-right: 10%;
 }
