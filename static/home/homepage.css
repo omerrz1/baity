@@ -17,7 +17,8 @@ body{
 .buttons{
     display: flex;
     top: 4%;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .button{
@@ -29,8 +30,8 @@ body{
 }
 
 .logo{
-    height: 10%;
-    width: 10%;
+    height: 4%;
+    width: 4%;
 }
 
 .menu{
