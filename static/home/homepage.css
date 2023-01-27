@@ -29,6 +29,6 @@ body{
 .logo{
     font-size: 18;
     justify-self: flex-start;
-    height: 1%;
-    width: 1%;
+    height: 70px;
+    width: 60px;
 }
