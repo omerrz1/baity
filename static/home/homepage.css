@@ -16,7 +16,8 @@ body{
 
 .buttons{
     display: flex;
-    justify-content: flex-end;
+    top: 4%;
+    justify-content: flex-start;
 }
 
 .button{
