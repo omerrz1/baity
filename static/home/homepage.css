@@ -19,7 +19,14 @@ body{
 }
 
 .button{
+    margin-top: 2%;
     margin-left: 3%;
     margin-right: 3%;
     color: white;
+}
+
+.logo{
+    justify-self: flex-start;
+    height: 3%;
+    width: 4%;
 }
