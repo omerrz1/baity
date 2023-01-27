@@ -59,10 +59,14 @@ body{
     .menu{
         display: flex;
     }
-    .buttons{
-        display:flex;
+    .nave{
         flex-direction: column;
-        align-self: flex-end;
-
     }
+    .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        top: 5%;
+    }
+    
 }
