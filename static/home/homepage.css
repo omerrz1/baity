@@ -30,6 +30,8 @@ body{
 }
 
 .logo{
+    justify-content: flex-start;
+    align-items: center;
     height: 4%;
     width: 4%;
 }
@@ -44,4 +46,19 @@ body{
     
 
 
+}
+
+
+@media (max-width:600px) {
+
+    .logo{
+        height: 10%;
+        width: 10%;
+    }
+    .menu{
+        display: flex;
+    }
+    .buttons{
+        display: none;
+    }
 }
