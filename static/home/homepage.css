@@ -29,8 +29,8 @@ body{
 
 .logo{
     justify-self: flex-start;
-    height: 5%;
-    width: 5%;
+    height: 10%;
+    width: 10%;
 }
 
 .menu{
@@ -38,7 +38,8 @@ body{
     top: 2%;
     right: 3%;
     height: 6%;
-    width: 6%;
+    width: 9%;
+    display: none;
     
 
 
