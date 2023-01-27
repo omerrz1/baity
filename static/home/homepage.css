@@ -10,7 +10,7 @@ body{
 
 .nave{
     display: flex;
-    margin-top: 2%;
+    margin-top: 1%;
     justify-content:space-between;
 }
 
@@ -20,13 +20,15 @@ body{
 }
 
 .button{
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
     color: white;
+    text-decoration: none;
 }
 
 .logo{
+    font-size: 18;
     justify-self: flex-start;
-    height: 3%;
-    width: 4%;
+    height: 1%;
+    width: 1%;
 }
