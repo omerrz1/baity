@@ -62,5 +62,7 @@ body{
     .buttons{
         display:flex;
         flex-direction: column;
+        align-self: flex-end;
+
     }
 }
