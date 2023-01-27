@@ -9,8 +9,8 @@ class ownerManager(BaseUserManager):
         if not username:
             raise ValueError('')
 
-        user = self.model(email=self.normalize_email(email))
-        user.username = username
+        user = self.model(email=self.normalize_email(email.lower()))
+        user.username = username.lower()
         user.phone = phone
         user.set_password(password)
         user.save(using=self._db)
