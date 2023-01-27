@@ -32,6 +32,7 @@ body{
 .logo{
     justify-content: flex-start;
     align-items: center;
+    top: 2%;
     height: 4%;
     width: 4%;
 }
@@ -59,6 +60,7 @@ body{
         display: flex;
     }
     .buttons{
-        display: none;
+        display:flex;
+        flex-direction: column;
     }
 }
