@@ -10,7 +10,7 @@ class ownerManager(BaseUserManager):
             raise ValueError('')
 
         user = self.model(email=self.normalize_email(email.lower()))
-        user.username = username.lower()
+        user.username = username
         user.phone = phone
         user.set_password(password)
         user.save(using=self._db)
