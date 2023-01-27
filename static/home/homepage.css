@@ -28,7 +28,6 @@ body{
 }
 
 .logo{
-    justify-self: flex-start;
     height: 10%;
     width: 10%;
 }
