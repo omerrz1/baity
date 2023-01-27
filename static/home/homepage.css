@@ -4,7 +4,7 @@ body{
     background-image: url('bg.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size:contain;
 }
 
 .nave{
@@ -14,8 +14,11 @@ body{
 
 .buttons{
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
+    color: white;
+}
+
+.button{
     margin-left: 10%;
-    color: whites;
     margin-right: 10%;
 }
