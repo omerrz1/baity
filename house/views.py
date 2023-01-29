@@ -24,7 +24,9 @@ class Myhouses(generics.ListAPIView):
         user = self.request.user
         qs = super().get_queryset()
         qs = qs.filter(owner=user)
-        return qs
+        houses=list(qs)
+        random.shuffle(houses)
+        return houses
 
 
 
