@@ -11,7 +11,6 @@ class MainHouses(generics.ListAPIView):
     def get_queryset(self):
         qs = super().get_queryset()
         qs =qs.filter(public = True)
-        random.shuffle(qs)
         return qs
 
 #list houses that were created by the user
