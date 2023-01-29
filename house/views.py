@@ -1,6 +1,7 @@
 from rest_framework import generics, permissions
 from . models import House
 from . serializers import houseserializer, photoserializer
+import random
 
 # list houses
 class MainHouses(generics.ListAPIView):
@@ -10,6 +11,7 @@ class MainHouses(generics.ListAPIView):
     def get_queryset(self):
         qs = super().get_queryset()
         qs =qs.filter(public = True)
+        random.shuffle(qs)
         return qs
 
 #list houses that were created by the user
