@@ -3,6 +3,7 @@ from rest_framework import serializers
 from django.core.mail import send_mail
 
 
+
 class OwnerSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -16,16 +17,15 @@ class OwnerSerializer(serializers.ModelSerializer):
 
 
     def create(self, validated_data):
-
         user_email = validated_data['email']
         username = validated_data['username']
+        message = f'hi {username} welcome to baity app' 
         send_mail(
-                'welcome to baity',
-                f'hi {username} thanks for siging up to baity',
-                'omermajdi250@gmail.com',
-                [f'{user_email}'],
-                fail_silently=True,
-            )
+            subject=f'welcome {username}',
+            message=message,
+            from_email='omermajdi250@gmail.com',
+            recipient_list=[user_email]
+        )
         return super().create(validated_data)
 
 
