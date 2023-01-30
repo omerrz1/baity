@@ -22,7 +22,7 @@ class OwnerSerializer(serializers.ModelSerializer):
         send_mail(
                 'welcome to baity',
                 f'hi {username} thanks for siging up to baity',
-                'omer@baity.uk',
+                'omermajdi250@gmail.com',
                 [f'{user_email}'],
                 fail_silently=True,
             )
