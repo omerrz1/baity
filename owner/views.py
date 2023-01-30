@@ -3,6 +3,7 @@ from .serializers import OwnerSerializer, ownerDetailsserializer
 from rest_framework import generics, permissions
 
 
+
 # importing the user model
 from django.contrib.auth import get_user_model
 

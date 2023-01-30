@@ -129,6 +129,14 @@ STATICFILES_DIRS = [
    BASE_DIR/"static",
 ]
 
+# email settings
+
+EMAIL_HOST = 'smtp.baity.uk'
+EMAIL_PORT = 999
+EMAIL_HOST_USER ='omer@baity.uk'
+EMAIL_HOST_PASSWORD = 'Baity1.py'
+EMAIL_USE_TLS = True
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
