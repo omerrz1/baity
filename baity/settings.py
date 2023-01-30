@@ -136,8 +136,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER ='omer@baity.uk'
-EMAIL_HOST_PASSWORD = 'Baity1.py'
+EMAIL_HOST_USER ='baity@baity.uk'
+EMAIL_HOST_PASSWORD = '@BaityCantBeHacked1.py'
 
 
 # Internationalization

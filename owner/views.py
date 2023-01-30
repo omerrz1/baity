@@ -17,6 +17,14 @@ class CreateOwner(generics.CreateAPIView):
     serializer_class = OwnerSerializer
 
 
+
+
+
+# verfiy email OTP view her //////
+
+
+
+
 # owners list view
 class ownersList(generics.ListAPIView):
     queryset = owner.objects.all()
