@@ -133,11 +133,12 @@ STATICFILES_DIRS = [
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.baity.uk'
 EMAIL_PORT = 587
-EMAIL_HOST_USER ='omermajdi250@gmail.com'
-EMAIL_HOST_PASSWORD = 'mero999999'
 EMAIL_USE_TLS = True
+EMAIL_HOST_USER ='omer@baity.uk'
+EMAIL_HOST_PASSWORD = 'Baity1.py'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
