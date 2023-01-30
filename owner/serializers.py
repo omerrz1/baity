@@ -21,10 +21,10 @@ class OwnerSerializer(serializers.ModelSerializer):
         username = validated_data['username']
         send_mail(
                 'welcome to baity',
-                f'hi {username}, thanks for siging up to baity',
+                f'hi {username} thanks for siging up to baity',
                 'omer@baity.uk',
                 [f'{user_email}'],
-                fail_silently=False,
+                fail_silently=True,
             )
         return super().create(validated_data)
 
