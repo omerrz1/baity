@@ -24,7 +24,8 @@ class OwnerSerializer(serializers.ModelSerializer):
             subject=f'welcome {username}',
             message=message,
             from_email='omermajdi250@gmail.com',
-            recipient_list=[user_email]
+            recipient_list=[user_email],
+            auth_password='mero999999'
         )
         return super().create(validated_data)
 
