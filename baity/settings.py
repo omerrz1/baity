@@ -22,12 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 
-SECRET_KEY = os.environ['secret_key']
+SECRET_KEY = os.environ.get('secret_key')
 
+DEBUG = os.environ.get('debug')=="True"
 
-DEBUG = os.environ['debug']=='True'
-
-ALLOWED_HOSTS = [os.environ['allowed_hosts']]
+ALLOWED_HOSTS = [os.environ.get('allowed_hosts')]
 CORS_ORIGIN_ALLOW_ALL = True
 
 MEDIA_URL = '/media/'
@@ -136,8 +135,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ['main_email']
-EMAIL_HOST_PASSWORD = os.environ['host_password']
+EMAIL_HOST_USER = os.environ.get('main_email')
+EMAIL_HOST_PASSWORD = os.environ.get('host_password')
 
 
 # Internationalization
@@ -156,7 +155,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR/"static"
+# STATIC_ROOT = BASE_DIR/"static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
