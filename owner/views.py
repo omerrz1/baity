@@ -27,7 +27,6 @@ class CreateOwner(generics.CreateAPIView):
             username = serializer.validated_data.get('username')
 
             send_OTP(email,username)
-
             return Response({
                 'info':'succes , check email',
                 'status':200,
