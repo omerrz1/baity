@@ -14,7 +14,7 @@ def send_OTP(email, username):
     OTP = random.randint(1000,9999)
     owner = get_user_model()
     # getting the user object 
-    owner = owner.objects.all(email = user_email)
+    owner = owner.objects.all().filter(email = user_email)
     # storing their OTP
     owner.OTP = OTP
     owner.save()
