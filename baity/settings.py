@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['secret_key']
 
 
-DEBUG = os.environ['debug']
+DEBUG = os.environ['debug']=='True'
 
-ALLOWED_HOSTS = os.environ['allowed_hosts']
+ALLOWED_HOSTS = [os.environ['allowed_hosts']]
 CORS_ORIGIN_ALLOW_ALL = True
 
 MEDIA_URL = '/media/'
