@@ -1,6 +1,8 @@
 # importing serializers
 from .serializers import OwnerSerializer, ownerDetailsserializer
 from rest_framework import generics, permissions
+from rest_framework.response import Response
+from .emails import send_OTP
 
 
 
@@ -15,6 +17,26 @@ owner = get_user_model()
 class CreateOwner(generics.CreateAPIView):
     queryset = owner.objects.all()
     serializer_class = OwnerSerializer
+
+    def perform_create(self, serializer):
+
+        if serializer.is_valid():
+            serializer.save()
+
+            email = serializer.validated_data.get('email')
+            username = serializer.validated_data.get('username')
+
+            send_OTP(email,username)
+
+            return Response({
+                'info':'succes , check email',
+                'status':200,
+                'data': serializer.data
+            })
+
+
+
+        
 
 
 

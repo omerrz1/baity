@@ -37,9 +37,10 @@ class Owner (AbstractBaseUser):
     username = models.CharField(unique=True, max_length=60)
     email = models.EmailField(verbose_name='email', unique=True)
     phone = models.IntegerField(unique= True)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
+    OTP = models.IntegerField(default=0)
 
     REQUIRED_FIELDS = ['username','phone']
     USERNAME_FIELD = 'email'
