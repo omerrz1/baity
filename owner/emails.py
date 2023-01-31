@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 # sending OTP function 
 
 def send_OTP(email, username):
-    user_email = email
+    user_email = [email]
     main_email = settings.EMAIL_HOST_USER
 
     # generating a random OTP
