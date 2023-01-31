@@ -17,7 +17,6 @@ def send_OTP(email, username):
     owner = owner.objects.all().filter(email = user_email)
     # storing their OTP
     owner.OTP = OTP
-    owner.save()
 
     message = render_to_string('OTP.html',{'username':username, 'OTP':OTP})
     subject = 'email verfication'
