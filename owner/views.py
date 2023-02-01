@@ -63,12 +63,14 @@ def verify_OTP(request):
             owner = get_user_model()
             owner = owner.objects.get(email=email)
             owner_otp = owner.OTP
+            print('owners otp: ', owner_otp)
         except:
             return Response({
             'account':'not verfied',
             'error':'owner not found'
             }, status=400)
         if owner_otp==int(OTP):
+            
             owner.is_active=True
             owner.save()
             return Response({
