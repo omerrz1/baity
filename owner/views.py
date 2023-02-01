@@ -61,7 +61,8 @@ class OTPVerfiy(generics.CreateAPIView):
                 })
             owner_otp = owner.OTP
             if owner_otp==OTP:
-
+                owner.is_active=True
+                owner.save()
                 return Response({
                     'status':200,
                     'account':'verfied'
