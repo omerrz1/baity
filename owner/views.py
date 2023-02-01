@@ -43,8 +43,6 @@ class CreateOwner(generics.CreateAPIView):
 
 # verfiy email OTP view her //////
 class OTPVerfiy(generics.CreateAPIView):
-    serializer_class = OTPSerializer
-
     def perform_create(self, serializer):
         request = self.request
         data = request.data
@@ -53,14 +51,21 @@ class OTPVerfiy(generics.CreateAPIView):
         if serializer.is_valid():
             email = serializer.data['email']
             OTP = serializer.data['OTP']
+            
+            try:
+                owner = owner.objects.get(email=email)
+            except:
+                return Response({
+                'status':400,
+                'account':'not verfied'
+                })
+            owner_otp = owner.OTP
+            if owner_otp==OTP:
 
-            owner = owner.objects.get(email=email)
-            owner.is_active=True
-            owner.save()
-            return Response({
-                'status':200,
-                'account':'verfied'
-            })
+                return Response({
+                    'status':200,
+                    'account':'verfied'
+                })
         else:
             return Response({
                 'status':400,
