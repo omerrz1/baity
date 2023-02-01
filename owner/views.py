@@ -43,7 +43,7 @@ def verify_OTP(request):
         OTP = serializer.data['OTP']
 
         print('eamil', email)
-            
+
         try:
             owner = get_user_model()
             owner = owner.objects.get(email=email)
@@ -54,13 +54,13 @@ def verify_OTP(request):
             'account':'not verfied',
             'error':'owner not found'
             }, status=400)
-        if owner_otp==int(OTP):
+        if owner_otp==OTP:
             owner.is_active=True
             owner.save()
             return Response({
                 'account':'verfied',
             }, status=200)
-        else: 
+        else:
             return Response({
             'account':'not verfied',
             'error':'wrong code'

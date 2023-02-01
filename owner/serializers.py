@@ -18,12 +18,12 @@ class OwnerSerializer(serializers.ModelSerializer):
         ]
 
 
-# otp serilaizer 
+# otp serilaizer
 class OTPSerializer(serializers.Serializer):
     email = serializers.EmailField()
-    OTP = serializers.CharField()
+    OTP = serializers.IntegerField()
 
-    
+
 
 class ownerDetailsserializer(serializers.ModelSerializer):
     class Meta:
