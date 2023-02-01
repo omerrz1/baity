@@ -78,7 +78,7 @@ def verify_OTP(request):
         else: 
             return Response({
             'account':'not verfied',
-            'error':'data not valid'
+            'error':'wrong code'
                  }, status=400)
     else:
         return Response({
