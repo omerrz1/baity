@@ -60,6 +60,7 @@ def verify_OTP(request):
         print('eamil', email)
             
         try:
+            owner = get_user_model()
             owner = owner.objects.get(email=email)
             owner_otp = owner.OTP
         except:
