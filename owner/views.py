@@ -41,7 +41,7 @@ class CreateOwner(generics.CreateAPIView):
 
 
 
-
+# verfiy OTP view
 @api_view(['POST'])
 def verify_OTP(request):
     data = request.data
