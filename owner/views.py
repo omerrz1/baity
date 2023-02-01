@@ -3,6 +3,7 @@ from .serializers import OwnerSerializer, ownerDetailsserializer,OTPSerializer
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from .emails import send_OTP
+from rest_framework.decorators import api_view
 
 
 
@@ -45,35 +46,34 @@ class CreateOwner(generics.CreateAPIView):
 class OTPVerfiy(generics.CreateAPIView):
     def perform_create(self, serializer):
         request = self.request
-        data = request.data
+       
 
-        serializer = OTPSerializer(data=data)
-        if serializer.is_valid():
-            email = serializer.data['email']
-            OTP = serializer.data['OTP']
+
+@api_view(['POST'])
+def verify_OTP(request):
+    data = request.data
+    serializer = OTPSerializer(data=data)
+    if serializer.is_valid():
+        email = serializer.data['email']
+        OTP = serializer.data['OTP']
             
-            try:
-                owner = owner.objects.get(email=email)
-            except:
-                return Response({
-                'status':400,
-                'account':'not verfied'
-                })
-            owner_otp = owner.OTP
-            if owner_otp==OTP:
-                owner.is_active=True
-                owner.save()
-                return Response({
-                    'status':200,
-                    'account':'verfied'
-                })
-        else:
+        try:
+            owner = owner.objects.get(email=email)
+        except:
             return Response({
-                'status':400,
-                'account':'not verfied'
-            })
-
-
+            'account':'not verfied'
+            }, status=400)
+        owner_otp = owner.OTP
+        if owner_otp==OTP:
+            owner.is_active=True
+            owner.save()
+            return Response({
+                'account':'verfied'
+            }, status=200)
+    else:
+        return Response({
+            'account':'not verfied'
+        }, status=400)
 
 # owners list view
 class ownersList(generics.ListAPIView):
