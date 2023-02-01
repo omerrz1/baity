@@ -23,7 +23,6 @@ class CreateOwner(generics.CreateAPIView):
 
         if serializer.is_valid():
             serializer.save()
-
             email = serializer.validated_data.get('email')
             username = serializer.validated_data.get('username')
 
@@ -33,13 +32,6 @@ class CreateOwner(generics.CreateAPIView):
                 'status':200,
                 'data': serializer.data
             })
-
-
-
-        
-
-
-
 
 # verfiy OTP view
 @api_view(['POST'])
