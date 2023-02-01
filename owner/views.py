@@ -42,13 +42,6 @@ class CreateOwner(generics.CreateAPIView):
 
 
 
-# verfiy email OTP view her //////
-class OTPVerfiy(generics.CreateAPIView):
-    def perform_create(self, serializer):
-        request = self.request
-       
-
-
 @api_view(['POST'])
 def verify_OTP(request):
     data = request.data
