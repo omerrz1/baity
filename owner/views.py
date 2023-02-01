@@ -70,12 +70,16 @@ def verify_OTP(request):
             'error':'owner not found'
             }, status=400)
         if owner_otp==int(OTP):
-            
             owner.is_active=True
             owner.save()
             return Response({
                 'account':'verfied',
             }, status=200)
+        else: 
+            return Response({
+            'account':'not verfied',
+            'error':'data not valid'
+                 }, status=400)
     else:
         return Response({
             'account':'not verfied',
