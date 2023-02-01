@@ -7,5 +7,6 @@ urlpatterns = [
     path('delete/<str:username>/', views.DeleteOwner.as_view(), name='dlete-owner'),
     path('detail/<str:username>/',
          views.ownerDetail.as_view(), name='owner-details'),
+    path('verify/', views.OTPVerfiy.as_view(), name='verify_OTP'),
     path('', views.ownersList.as_view(), name='owners'),
 ]
