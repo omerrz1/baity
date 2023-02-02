@@ -97,3 +97,16 @@ class UpdateOwner(generics.UpdateAPIView):
     queryset = owner.objects.all()
     lookup_field = 'username'
     permission_classes = [permissions.IsAuthenticated]
+
+
+class MyProfile(generics.ListAPIView()):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class= ownerDetailsserializer
+    queryset = owner.objects.all()
+
+    def get_queryset(self):
+        email = self.request.user.email
+        qs = super().get_queryset()
+        qs = qs.filter(email = email)
+        return qs
+
