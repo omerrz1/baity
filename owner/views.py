@@ -99,7 +99,7 @@ class UpdateOwner(generics.UpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
 
-class MyProfile(generics.ListAPIView()):
+class MyProfile(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class= ownerDetailsserializer
     queryset = owner.objects.all()
