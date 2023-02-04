@@ -85,7 +85,7 @@ body{
     .buttons{
         transition-duration: .5s;
         opacity: 0;
-        width: 30%;
+        width: 40%;
         border-width:1px;
         flex-direction: column;
         align-items: flex-start;
