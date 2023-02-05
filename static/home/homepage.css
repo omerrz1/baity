@@ -57,7 +57,7 @@ body{
     right: 3%;
     height: 6%;
     width: 9%;
-    display: none;
+    opacity: 0;
 }
 
 
@@ -68,7 +68,7 @@ body{
         width: 10%;
     }
     .menu{
-        display: flex;
+        opacity: 1;
         transition-duration: .7s;
     }
     }
