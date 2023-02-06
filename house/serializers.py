@@ -3,15 +3,21 @@ from . models import House, photo
 
 
 class photoserializer(serializers.ModelSerializer):
+    key= serializers.SerializerMethodField(read_only = True)
     class Meta:
         model = photo
         fields = ['photo', 'house']
+    
+    
+    def get_key(self,obj):
+        return str(obj.house)
+
 
 
 class houseserializer(serializers.ModelSerializer):
     photos = photoserializer(read_only=True, many=True)
     owner = serializers.SerializerMethodField(read_only=True)
-
+    key = serializers.SerializerMethodField(read_only=True)
     class Meta:
         model = House
         fields = [
@@ -31,6 +37,10 @@ class houseserializer(serializers.ModelSerializer):
     
     def get_owner(self,obj):
         return obj.owner.username
+
+    
+    def get_key(self,obj):
+        return str(obj.id)
 
 
 
