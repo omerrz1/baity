@@ -35,10 +35,10 @@ body{
 .button:hover{
     padding: 10px;
     border-style: solid;
-    border-radius: 10%;
+    border-radius: 20%;
     padding: 7px;
-    border-width: 1px;
-    border-color: skyblue;
+    border-width: .5px;
+    border-color: white;
     box-shadow: 0px 0px 40px 0px;
 }
 
