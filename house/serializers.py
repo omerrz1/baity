@@ -10,7 +10,7 @@ class photoserializer(serializers.ModelSerializer):
     
     
     def get_key(self,obj):
-        return str(obj.house)
+        return str(obj.id)
 
 
 
