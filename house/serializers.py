@@ -6,7 +6,7 @@ class photoserializer(serializers.ModelSerializer):
     key= serializers.SerializerMethodField(read_only = True)
     class Meta:
         model = photo
-        fields = ['photo', 'house']
+        fields = ['photo', 'house','key']
     
     
     def get_key(self,obj):
@@ -21,6 +21,7 @@ class houseserializer(serializers.ModelSerializer):
     class Meta:
         model = House
         fields = [
+            'key',
             'id',
             'price',
             'owner',
