@@ -33,3 +33,22 @@ class ownerDetailsserializer(serializers.ModelSerializer):
             'email',
             'phone'
         ]
+
+
+
+class Update_username_phone_serializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields =[
+            'username',
+            'phone'
+        ]
+
+
+
+class update_email_serializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields=[
+            'email'
+        ]

@@ -1,5 +1,5 @@
 # importing serializers
-from .serializers import OwnerSerializer, ownerDetailsserializer,OTPSerializer
+from .serializers import OwnerSerializer, ownerDetailsserializer,OTPSerializer, update_email_serializer,Update_username_phone_serializer
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from .emails import send_OTP
@@ -92,11 +92,32 @@ class ownerDetail(generics.RetrieveAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
 # update owners details view
-class UpdateOwner(generics.UpdateAPIView):
-    serializer_class = OwnerSerializer
+class UpdateOwner_username_phone(generics.UpdateAPIView):
+    serializer_class = Update_username_phone_serializer
     queryset = owner.objects.all()
-    lookup_field = 'username'
+    lookup_field = 'id'
+    permission_classes = [permissions.IsAuthenticated],
+
+
+    def get_queryset(self):
+        qs= super().get_queryset()
+        id = self.request.user.id
+        qs = qs.filter(id=id)
+
+
+
+class UpdateOwner_email(generics.UpdateAPIView):
+    serializer_class = update_email_serializer
+    queryset = get_user_model().objects.all()
+    lookup_field = 'id'
     permission_classes = [permissions.IsAuthenticated]
+
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        id = self.request.user.id
+        qs = qs.filter(id =id)
+
 
 
 class MyProfile(generics.ListAPIView):
