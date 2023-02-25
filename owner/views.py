@@ -96,13 +96,14 @@ class UpdateOwner_username_phone(generics.UpdateAPIView):
     serializer_class = Update_username_phone_serializer
     queryset = owner.objects.all()
     lookup_field = 'id'
-    permission_classes = [permissions.IsAuthenticated],
+    permission_classes = [permissions.IsAuthenticated]
 
 
     def get_queryset(self):
         qs= super().get_queryset()
         id = self.request.user.id
         qs = qs.filter(id=id)
+        return qs
 
 
 
@@ -117,6 +118,7 @@ class UpdateOwner_email(generics.UpdateAPIView):
         qs = super().get_queryset()
         id = self.request.user.id
         qs = qs.filter(id =id)
+        return qs
 
 
 
