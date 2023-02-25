@@ -40,6 +40,7 @@ class Owner (AbstractBaseUser):
     is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
+    is_verfied = models.BooleanField(default=False)
     OTP = models.IntegerField(default=0)
 
     REQUIRED_FIELDS = ['username','phone']
