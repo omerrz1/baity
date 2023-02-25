@@ -57,6 +57,7 @@ def verify_OTP(request):
         if owner_otp==OTP:
             owner.is_active=True
             owner.is_verfied = True
+            owner.OTP=0
             owner.save()
             return Response({
                 'account':'verfied',
