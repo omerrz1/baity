@@ -1,9 +1,9 @@
 # importing serializers
 from .serializers import OwnerSerializer, ownerDetailsserializer,OTPSerializer, update_email_serializer,Update_username_phone_serializer
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions,authentication
 from rest_framework.response import Response
 from .emails import send_OTP
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,permission_classes,authentication_classes
 
 
 
@@ -26,7 +26,7 @@ class CreateOwner(generics.CreateAPIView):
             email = serializer.validated_data.get('email')
             username = serializer.validated_data.get('username')
 
-            send_OTP(email,username)
+            send_OTP(email,username,template='OTP.html')
             return Response({
                 'info':'succes , check email',
                 'status':200,
@@ -71,6 +71,18 @@ def verify_OTP(request):
             'account':'not verfied',
             'error':'data not valid'
         }, status=400)
+
+
+
+@api_view(['GET'])
+@permission_classes([permissions.IsAuthenticated])
+@authentication_classes([authentication.TokenAuthentication])
+def verfiy_email(request):
+    user = request.user
+    email = user.email
+    send_OTP(email=email,username=user.username,template='emailOTP.html')
+    return Response({'email sent to :':email})
+
 
 # owners list view
 class ownersList(generics.ListAPIView):

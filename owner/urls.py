@@ -10,5 +10,6 @@ urlpatterns = [
          views.ownerDetail.as_view(), name='owner-details'),
     path('verify/', views.verify_OTP, name='verify-OTP'),
     path('', views.ownersList.as_view(), name='owners'),
+    path('verify-email/',views.verfiy_email, name='email-otp'),
     path('profile/',views.MyProfile.as_view(), name="my-profile")
 ]

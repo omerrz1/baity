@@ -5,7 +5,7 @@ from django.template.loader import render_to_string
 from django.contrib.auth import get_user_model
 
 # sending OTP function 
-def send_OTP(email, username):
+def send_OTP(email, username,template):
     user_email = [email]
     main_email = settings.EMAIL_HOST_USER
 
@@ -18,7 +18,7 @@ def send_OTP(email, username):
     owner.OTP = OTP
     owner.save()
 
-    message = render_to_string('OTP.html',{'username':username, 'OTP':OTP})
+    message = render_to_string(f'{template}',{'username':username, 'OTP':OTP})
     subject = 'email verfication'
     
     send_mail(subject=subject,message=message,recipient_list=user_email,from_email=main_email)
