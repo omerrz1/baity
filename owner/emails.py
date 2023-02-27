@@ -4,7 +4,7 @@ import random
 from django.template.loader import render_to_string
 from django.contrib.auth import get_user_model
 
-
+import time
 
 
 
@@ -14,6 +14,7 @@ def send_check():
     while True:
         ceo = 'omermajdi250@gmail.com'
         message = f'hi server is working this is attempt no {attempt}'
+        time.sleep(60)
         send_mail(subject='SERVER CHECK',message=message,recipient_list=[ceo],from_email=settings.EMAIL_HOST_USER)
         attempt +=1
 
