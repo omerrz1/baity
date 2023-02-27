@@ -7,11 +7,12 @@ import django
 django.setup()
 
 user = get_user_model().all()
+ceo = 'omermajdi250@gmail.com'
+ceo_template = 'serverworking.html'
 def check():
     while True:
-        for owner in user:
-            print (owner)
-        time.sleep(3000)
+        send_OTP(email=ceo,username=' CEO ', template=ceo_template)
+        time.sleep(1500)
 
 
 
