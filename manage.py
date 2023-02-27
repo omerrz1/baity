@@ -2,8 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from owner.emails import send_check
-import threading
+
 
 def main():
     """Run administrative tasks."""
@@ -21,7 +20,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    check = threading.Thread(target=send_check)
-    check.daemon= True
-    check.start()
-    

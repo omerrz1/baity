@@ -10,7 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
-
+import threading 
+from owner.emails import send_check
 
 from pathlib import Path
 
@@ -35,6 +36,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'owner.Owner'
 
 # Application definition
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -161,3 +164,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+#  my thread 
+
+thread = threading.Thread(target=send_check)
+thread.start()
