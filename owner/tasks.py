@@ -5,10 +5,11 @@ import threading
 from emails import send_OTP
 
 
-
+user = get_user_model().all()
 def check():
     while True:
-        send_OTP('omermajdi250@gmail.com',' CEO ','serverworking.html')
+        for owner in user:
+            print (owner)
         time.sleep(3000)
 
 
