@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 import datetime
 import time
 import threading
-from .emails import send_OTP
+from emails import send_OTP
 
 
 

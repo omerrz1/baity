@@ -4,6 +4,9 @@ import random
 from django.template.loader import render_to_string
 from django.contrib.auth import get_user_model
 
+
+
+settings.configure()
 # sending OTP function 
 def send_OTP(email, username,template):
     user_email = [email]
