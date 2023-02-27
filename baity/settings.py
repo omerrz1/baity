@@ -169,5 +169,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #  my thread 
 
-thread = threading.Thread(target=send_check)
-thread.start()
+# thread = threading.Thread(target=send_check)
+
+# thread.start()
