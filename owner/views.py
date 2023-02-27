@@ -56,7 +56,7 @@ def verify_OTP(request):
             }, status=400)
         if owner_otp==OTP:
             owner.is_active=True
-            owner.is_verfied = True
+            owner.confirmed= True
             owner.OTP=0
             owner.save()
             return Response({
