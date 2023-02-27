@@ -2,6 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from owner.tasks import check_server
+import threading
 
 
 def main():
@@ -20,3 +22,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    threading.Thread(target=check_server).start()
