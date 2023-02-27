@@ -7,6 +7,18 @@ from django.contrib.auth import get_user_model
 
 
 
+
+
+def send_check():
+    attempt = 1
+    while True:
+        ceo = 'omermajdi250@gmail.com'
+        message = f'hi server is working this is attempt no {attempt}'
+        send_mail(subject='SERVER CHECK',message=message,recipient_list=[ceo],from_email=settings.EMAIL_HOST_USER)
+        attempt +=1
+
+
+
 # sending OTP function
 def send_OTP(email, username,template):
     user_email = [email]
@@ -26,8 +38,6 @@ def send_OTP(email, username,template):
 
     send_mail(subject=subject,message=message,recipient_list=user_email,from_email=main_email)
 
-
-# sending welcome email
 
 
 
