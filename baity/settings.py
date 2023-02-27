@@ -39,9 +39,9 @@ AUTH_USER_MODEL = 'owner.Owner'
 
 
 # threads
-task = threading.Thread(target=check_server)
-task.daemon= True
-task.start()
+# task = threading.Thread(target=check_server)
+# task.daemon= True
+# task.start()
 
 # Application definition
 
