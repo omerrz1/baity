@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 
-import threading
-from owner.tasks import check_server
 
 from pathlib import Path
 
@@ -35,13 +33,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'owner.Owner'
-
-
-
-# threads
-# task = threading.Thread(target=check_server)
-# task.daemon= True
-# task.start()
 
 # Application definition
 
