@@ -3,7 +3,8 @@ import datetime
 import time
 import threading
 from emails import send_OTP
-
+import django
+django.setup()
 
 user = get_user_model().all()
 def check():

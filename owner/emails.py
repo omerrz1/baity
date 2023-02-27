@@ -6,8 +6,8 @@ from django.contrib.auth import get_user_model
 
 
 
-settings.configure()
-# sending OTP function 
+
+# sending OTP function
 def send_OTP(email, username,template):
     user_email = [email]
     main_email = settings.EMAIL_HOST_USER
@@ -15,7 +15,7 @@ def send_OTP(email, username,template):
     # generating a random OTP
     OTP = random.randint(1000,9999)
     owner = get_user_model()
-    # getting the user object 
+    # getting the user object
     owner = owner.objects.get(email=user_email[0])
     # storing their OTP
     owner.OTP = OTP
@@ -23,7 +23,7 @@ def send_OTP(email, username,template):
 
     message = render_to_string(f'{template}',{'username':username, 'OTP':OTP})
     subject = 'email verfication'
-    
+
     send_mail(subject=subject,message=message,recipient_list=user_email,from_email=main_email)
 
 
@@ -32,7 +32,7 @@ def send_OTP(email, username,template):
 
 
 
-# ALERT !! this function is just for testing 
+# ALERT !! this function is just for testing
 def send_demo(validated_data):
     user_email = [validated_data['email']]
     user_name = validated_data['username']
