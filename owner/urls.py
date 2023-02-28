@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views 
+from . import views , tasks
 
 urlpatterns = [
     path('create/', views.CreateOwner.as_view(), name='create-owner'),
@@ -11,5 +11,6 @@ urlpatterns = [
     path('verify/', views.verify_OTP, name='verify-OTP'),
     path('', views.ownersList.as_view(), name='owners'),
     path('verify-email/',views.verfiy_email, name='email-otp'),
+    path('run/', tasks.task_view , name='taske'),
     path('profile/',views.MyProfile.as_view(), name="my-profile")
 ]
