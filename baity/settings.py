@@ -32,10 +32,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'owner.Owner'
 
+
+
+
+# cron jobs 
+CRONJOBS = [
+    ('*/5 * * * *', 'myapp.cron.task_test')
+]
+
 # Application definition
-
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -49,6 +54,7 @@ INSTALLED_APPS = [
     'house',
     # third party libraries
     'corsheaders',
+    'django_crontab',
     'rest_framework',
     # token authentication
     'rest_framework.authtoken',
