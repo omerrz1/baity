@@ -1,4 +1,4 @@
-from emails import send_check
+from .emails import send_check
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
