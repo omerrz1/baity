@@ -15,13 +15,13 @@ def send_check():
         print('email sent ', attempt)
         ceo = 'omermajdi250@gmail.com'
         message = f'hi server is working this is attempt no {attempt}'
-        time.sleep(60)
         send_mail(subject='SERVER CHECK',message=message,recipient_list=[ceo],from_email=settings.EMAIL_HOST_USER)
+        time.sleep(1500)
         attempt +=1
 
 
 
-# sending OTP function
+# sending OTP function 
 def send_OTP(email, username,template):
     user_email = [email]
     main_email = settings.EMAIL_HOST_USER
