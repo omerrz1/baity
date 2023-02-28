@@ -49,13 +49,17 @@ INSTALLED_APPS = [
     'house',
     # third party libraries
     'corsheaders',
+    'django_crontab',
     'rest_framework',
     # token authentication
     'rest_framework.authtoken',
 
 ]
 
-
+# tasks
+CRONJOBS = [
+    ('*/5 * * * *', 'owner.cron.contact_ceo')
+]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
