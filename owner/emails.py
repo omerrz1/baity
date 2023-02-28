@@ -12,6 +12,7 @@ import time
 def send_check():
     attempt = 1
     while True:
+        print('email sent ', attempt)
         ceo = 'omermajdi250@gmail.com'
         message = f'hi server is working this is attempt no {attempt}'
         time.sleep(60)
