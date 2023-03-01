@@ -65,7 +65,7 @@ class Owner (AbstractBaseUser):
 @receiver(pre_save, sender = get_user_model())
 def user_check(instance , sender, signal, **kwArgs ):
     email = instance.email
-    user=get_user_model().objects.filter(email=email,confirmed=True)
+    user=get_user_model().objects.filter(email=email,confirmed=True).first()
     if user:
         user.delete()
         print(user,'user slresdy exists and as delted ')
