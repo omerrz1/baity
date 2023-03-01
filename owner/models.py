@@ -61,7 +61,7 @@ class Owner (AbstractBaseUser):
 
 
 # signals 
-@receiver(pre_save, sender = get_user_model())
+@receiver(pre_save, sender = Owner)
 def user_check(instance , sender, signal, **kwArgs ):
     print('signaal was trigerred for ',instance)
     if not instance.pk:
