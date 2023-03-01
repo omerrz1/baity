@@ -2,19 +2,6 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 
-# #  request = self.request
-#         data = request.data 
-#         email = data['email']
-#         print ('account created for ',email)
-#         check_owner = get_user_model()
-#         check_owner = check_owner.get(email=email,confirmed= False)
-#         if check_owner:
-#             print(check_owner,'will be deleted')
-#             check_owner.delete()
-
-
-
-
 class OwnerSerializer(serializers.ModelSerializer):
 
     class Meta:
