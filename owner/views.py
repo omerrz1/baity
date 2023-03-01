@@ -31,17 +31,19 @@ class CreateOwner(generics.CreateAPIView):
         if check_owner:
             print(check_owner,'will be deleted')
             check_owner.delete()
-        if serializer.is_valid():
-            serializer.save()
-            email = serializer.validated_data.get('email')
-            username = serializer.validated_data.get('username')
+        else:
+            print('user not found ')
+            if serializer.is_valid():
+                serializer.save()
+                email = serializer.validated_data.get('email')
+                username = serializer.validated_data.get('username')
 
-            send_OTP(email,username,template='OTP.html')
-            return Response({
-                'info':'succes , check email',
-                'status':200,
-                'data': serializer.data
-            })
+                send_OTP(email,username,template='OTP.html')
+                return Response({
+                    'info':'succes , check email',
+                    'status':200,
+                    'data': serializer.data
+                })
 
 # verfiy OTP view
 @api_view(['POST'])
