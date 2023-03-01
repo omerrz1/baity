@@ -23,17 +23,19 @@ class CreateOwner(generics.CreateAPIView):
         # Get the request data before it is validated
         data = request.data
         print (dict(data))
-        email = data['email']
-        print ('!!! !!!! inittial account created for ',email)
-        check_owner = get_user_model()
-        try:
-            check_owner = check_owner.objects.get(email=email,confirmed= False)
-            if check_owner:
-                print(check_owner,'will be deleted because it wasnt verified')
-                check_owner.delete()
-        
-        except:
-            pass
+        if data['email']:
+            email = data['email'][0]
+
+            print ('!!! !!!! inittial account created for ',email)
+            check_owner = get_user_model()
+            try:
+                check_owner = check_owner.objects.get(email=email,confirmed= False)
+                if check_owner:
+                    print(check_owner,'will be deleted because it wasnt verified')
+                    check_owner.delete()
+            
+            except:
+                pass
         # Call the parent class's initial method
         super().initial(request, *args, **kwargs)
 
