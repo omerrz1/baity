@@ -68,5 +68,6 @@ def user_check(instance , sender ):
     user=get_user_model().objects.filter(email=email,confirmed=True)
     if user:
         user.delete()
+        print(user,'user slresdy exists and as delted ')
     else:
         print('user created without anything ')
