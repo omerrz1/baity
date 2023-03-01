@@ -25,9 +25,9 @@ class CreateOwner(generics.CreateAPIView):
         email = data['email']
         print ('!!! !!!! inittial account created for ',email)
         check_owner = get_user_model()
-        check_owner = check_owner.get(email=email,confirmed= False)
+        check_owner = check_owner.objects.get(email=email,confirmed= False)
         if check_owner:
-            print(check_owner,'will be deleted')
+            print(check_owner,'will be deleted because it wasnt verified')
             check_owner.delete()
         
         # Set the modified data back to the request
