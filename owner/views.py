@@ -30,8 +30,6 @@ class CreateOwner(generics.CreateAPIView):
             print(check_owner,'will be deleted because it wasnt verified')
             check_owner.delete()
         
-        # Set the modified data back to the request
-        request.data = data
         
         # Call the parent class's initial method
         super().initial(request, *args, **kwargs)
