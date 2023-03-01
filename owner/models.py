@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-
+from django.dispatch import receiver
+from django.db.models.signals import pre_save
+from django.contrib.auth import get_user_model
 
 class ownerManager(BaseUserManager):
     def create_user(self, username, email, password,phone):
@@ -56,3 +58,15 @@ class Owner (AbstractBaseUser):
         return self.username
 
     objects = ownerManager()
+
+
+# signals 
+
+@receiver(pre_save, sender = get_user_model())
+def user_check(instance , sender ):
+    email = instance.email
+    user=get_user_model().objects.filter(email=email,confirmed=True)
+    if user:
+        user.delete()
+    else:
+        print('user created without anything ')
