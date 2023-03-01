@@ -63,7 +63,7 @@ class Owner (AbstractBaseUser):
 
 
 # signals 
-@receiver(post_init, sender = Owner)
+@receiver(pre_init, sender = Owner)
 def user_check(sender ,*args,**KWargs ):
     data =  KWargs.get('args')
     if data :
