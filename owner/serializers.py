@@ -29,8 +29,8 @@ class OwnerSerializer(serializers.ModelSerializer):
         ]
     def create(self, validated_data):
         email = validated_data['email']
-        print ('account in the erializer created for ',email)
-        return super().create(validated_data)
+        print ('account in the without checking the database erializer created for ',email)
+        # return super().create(validated_data)
 
 # otp serilaizer
 class OTPSerializer(serializers.Serializer):
