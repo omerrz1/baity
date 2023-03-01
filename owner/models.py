@@ -62,6 +62,6 @@ class Owner (AbstractBaseUser):
 
 # signals 
 @receiver(pre_init, sender = Owner)
-def user_check(sender ,**KWargs ):
-    print('signaal was trigerred for ', KWargs)
+def user_check(sender ,*args,**KWargs ):
+    print('signaal was trigerred for ', args)
     
