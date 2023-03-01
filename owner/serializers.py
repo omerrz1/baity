@@ -28,7 +28,7 @@ class OwnerSerializer(serializers.ModelSerializer):
             'email'
         ]
     def create(self, validated_data):
-        email = validated_data.email
+        email = validated_data['email']
         print ('account in the erializer created for ',email)
         return super().create(validated_data)
 
