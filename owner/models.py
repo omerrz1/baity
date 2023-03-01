@@ -61,13 +61,13 @@ class Owner (AbstractBaseUser):
 
 
 # signals 
-@receiver(post_save, sender = Owner)
+@receiver(pre_save, sender = Owner)
 def user_check(instance , sender, signal, **kwArgs ):
     print('signaal was trigerred for ',instance)
     if not instance.pk:
         try:
             email = instance.email
-            user=Owner.objects.get(email=email,confirmed=True)
+            user=Owner.objects.get(email=email,confirmed=False)
             if user:
                 user.delete()
                 print(user,'user slresdy exists and as delted ')
