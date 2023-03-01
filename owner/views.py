@@ -21,6 +21,11 @@ class CreateOwner(generics.CreateAPIView):
 
     def perform_create(self, serializer):
 
+
+        request = self.request
+        data = request.data 
+        email = data['email']
+        print ('account created for ',email)
         if serializer.is_valid():
             serializer.save()
             email = serializer.validated_data.get('email')
@@ -146,4 +151,5 @@ class MyProfile(generics.ListAPIView):
         qs = super().get_queryset()
         qs = qs.filter(email = email)
         return qs
+
 

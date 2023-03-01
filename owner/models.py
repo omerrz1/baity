@@ -62,20 +62,23 @@ class Owner (AbstractBaseUser):
     objects = ownerManager()
 
 
-# signals 
-@receiver(pre_init, sender = Owner)
-def user_check(sender ,*args,**KWargs ):
-    data =  KWargs.get('args')
-    if data :
-        email = list(data)[4]
-        # check
-        print('signaal was trigerred for ',email)
-        try:
-            time_threshold = timezone.now() - timezone.timedelta(minutes=2)
-            check_Owner = Owner.objects.get(email=email, confirmed=False)
-            if check_Owner:
-                if check_Owner.created_at<time_threshold:
-                    check_Owner.delete()
+# # signals 
+# @receiver(pre_init, sender = Owner)
+# def user_check(sender ,*args,**KWargs ):
+#     data =  KWargs.get('args')
+#     if data :
+#         email = list(data)[4]
+#         # check
+#         print('signaal was trigerred for ',email)
+#         try:
+#             time_threshold = timezone.now() - timezone.timedelta(minutes=2)
+#             check_Owner = Owner.objects.get(email=email, confirmed=False)
+#             if check_Owner:
+#                 if check_Owner.created_at<time_threshold:
+#                     check_Owner.delete()
 
-        except:
-            pass
+#         except:
+#             pass
+
+
+
