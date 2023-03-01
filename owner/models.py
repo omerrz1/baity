@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.dispatch import receiver
 from django.db.models.signals import pre_init
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 
 class ownerManager(BaseUserManager):
     def create_user(self, username, email, password,phone):
@@ -43,6 +44,7 @@ class Owner (AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     confirmed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(default=timezone.now)
     OTP = models.IntegerField(default=0)
 
     REQUIRED_FIELDS = ['username','phone']
@@ -69,8 +71,11 @@ def user_check(sender ,*args,**KWargs ):
         # check
         print('signaal was trigerred for ',email)
         try:
-            check_Owner = Owner.objects.get(email=email, confirmed=False )
+            time_threshold = timezone.now() - timezone.timedelta(minutes=2)
+            check_Owner = Owner.objects.get(email=email, confirmed=False)
             if check_Owner:
-                check_Owner.delete()
+                if check_Owner.created_at<time_threshold:
+                    check_Owner.delete()
+
         except:
             pass
