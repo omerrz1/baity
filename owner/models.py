@@ -66,6 +66,11 @@ def user_check(sender ,*args,**KWargs ):
     data =  KWargs.get('args')
     if data :
         email = list(data)[4]
+        # check
         print('signaal was trigerred for ',email)
-        print('keyword argss ',KWargs)
-        # check if there is data
+        try:
+            check_Owner = Owner.objects.get(email=email, confirmed=False )
+            if check_Owner:
+                check_Owner.delete()
+        except:
+            pass
