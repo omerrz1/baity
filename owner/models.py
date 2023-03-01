@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.dispatch import receiver
-from django.db.models.signals import pre_init
+from django.db.models.signals import pre_init,post_init
 from django.contrib.auth import get_user_model
 from django.utils import timezone
 
@@ -63,7 +63,7 @@ class Owner (AbstractBaseUser):
 
 
 # signals 
-@receiver(pre_init, sender = Owner)
+@receiver(post_init, sender = Owner)
 def user_check(sender ,*args,**KWargs ):
     data =  KWargs.get('args')
     if data :
