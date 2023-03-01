@@ -21,11 +21,16 @@ class CreateOwner(generics.CreateAPIView):
 
     def perform_create(self, serializer):
 
-
+        # uesr ccheck 
         request = self.request
         data = request.data 
         email = data['email']
         print ('account created for ',email)
+        check_owner = get_user_model()
+        check_owner = check_owner.get(email=email,confirmed= False)
+        if check_owner:
+            print(check_owner,'will be deleted')
+            check_owner.delete()
         if serializer.is_valid():
             serializer.save()
             email = serializer.validated_data.get('email')
