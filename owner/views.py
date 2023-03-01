@@ -19,6 +19,23 @@ class CreateOwner(generics.CreateAPIView):
     queryset = owner.objects.all()
     serializer_class = OwnerSerializer
 
+    def initial(self, request, *args, **kwargs):
+        # Get the request data before it is validated
+        data = request.data
+        email = data['email']
+        print ('!!! !!!! inittial account created for ',email)
+        check_owner = get_user_model()
+        check_owner = check_owner.get(email=email,confirmed= False)
+        if check_owner:
+            print(check_owner,'will be deleted')
+            check_owner.delete()
+        
+        # Set the modified data back to the request
+        request.data = data
+        
+        # Call the parent class's initial method
+        super().initial(request, *args, **kwargs)
+
     def perform_create(self, serializer):
             if serializer.is_valid():
                 serializer.save()

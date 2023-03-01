@@ -15,7 +15,6 @@ from rest_framework import serializers
 
 
 
-
 class OwnerSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -27,10 +26,7 @@ class OwnerSerializer(serializers.ModelSerializer):
             'password',
             'email'
         ]
-    def create(self, validated_data):
-        email = validated_data['email']
-        print ('account in the without checking the database erializer created for ',email)
-        # return super().create(validated_data)
+   
 
 # otp serilaizer
 class OTPSerializer(serializers.Serializer):
