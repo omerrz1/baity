@@ -24,7 +24,7 @@ class CreateOwner(generics.CreateAPIView):
         data = request.data
         print (dict(data))
         if data['email']:
-            email = data['email'][0]
+            email = data['email']
 
             print ('!!! !!!! inittial account created for ',email)
             check_owner = get_user_model()
