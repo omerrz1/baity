@@ -22,7 +22,7 @@ class CreateOwner(generics.CreateAPIView):
     def initial(self, request, *args, **kwargs):
         # Get the request data before it is validated
         data = request.data
-        print (data)
+        print (dict(data))
         email = data['email']
         print ('!!! !!!! inittial account created for ',email)
         check_owner = get_user_model()
