@@ -63,7 +63,7 @@ class Owner (AbstractBaseUser):
 # signals 
 
 @receiver(pre_save, sender = get_user_model())
-def user_check(instance , sender ):
+def user_check(instance , sender, signal, **kwArgs ):
     email = instance.email
     user=get_user_model().objects.filter(email=email,confirmed=True)
     if user:
