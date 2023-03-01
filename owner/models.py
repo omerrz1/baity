@@ -64,6 +64,6 @@ class Owner (AbstractBaseUser):
 @receiver(pre_init, sender = Owner)
 def user_check(sender ,*args,**KWargs ):
     data =  KWargs.get('args')
-    email = data[4]
+    email = list(data)[4]
     print('signaal was trigerred for ',email)
     
