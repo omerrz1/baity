@@ -67,4 +67,5 @@ def user_check(sender ,*args,**KWargs ):
     if data :
         email = list(data)[4]
         print('signaal was trigerred for ',email)
+        print('keyword argss ',KWargs)
         # check if there is data
