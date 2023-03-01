@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.dispatch import receiver
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save,post_save
 from django.contrib.auth import get_user_model
 
 class ownerManager(BaseUserManager):
@@ -61,14 +61,17 @@ class Owner (AbstractBaseUser):
 
 
 # signals 
-@receiver(pre_save, sender = Owner)
+@receiver(post_save, sender = Owner)
 def user_check(instance , sender, signal, **kwArgs ):
     print('signaal was trigerred for ',instance)
     if not instance.pk:
-        email = instance.email
-        user=Owner.objects.get(email=email,confirmed=True)
-        if user:
-            user.delete()
-            print(user,'user slresdy exists and as delted ')
-        else:
-            print('user created without anything ')
+        try:
+            email = instance.email
+            user=Owner.objects.get(email=email,confirmed=True)
+            if user:
+                user.delete()
+                print(user,'user slresdy exists and as delted ')
+            else:
+                print('user created without anything ')
+        except :
+            pass
