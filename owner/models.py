@@ -66,7 +66,7 @@ def user_check(instance , sender, signal, **kwArgs ):
     print('signaal was trigerred for ',instance)
     if not instance.pk:
         email = instance.email
-        user=get_user_model().objects.get(email=email,confirmed=True)
+        user=Owner.objects.get(email=email,confirmed=True)
         if user:
             user.delete()
             print(user,'user slresdy exists and as delted ')
