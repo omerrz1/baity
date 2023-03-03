@@ -8,6 +8,7 @@ urlpatterns = [
     path('delete/<str:email>/', views.DeleteOwner.as_view(), name='delete-owner'),
     path('detail/<str:username>/',
          views.ownerDetail.as_view(), name='owner-details'),
+    path('deleteme/', views.delete_me , name = 'delete my account'),
     path('verify/', views.verify_OTP, name='verify-OTP'),
     path('', views.ownersList.as_view(), name='owners'),
     path('verify-email/',views.verfiy_email, name='email-otp'),

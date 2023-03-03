@@ -117,6 +117,19 @@ class DeleteOwner(generics.DestroyAPIView):
     lookup_field = 'email'
     permission_classes = [permissions.IsAuthenticated]
 
+
+
+
+@api_view(["GET",'POST'])
+@permission_classes([permissions.IsAuthenticated])
+@authentication_classes([authentication.TokenAuthentication])
+def delete_me(request, *args,**KWargs):
+    owner = request.user
+    name = owner.username
+    owner.delete()
+    return Response({'account deleted: ': name})
+    
+
 # owner details view
 class ownerDetail(generics.RetrieveAPIView):
     serializer_class = ownerDetailsserializer
