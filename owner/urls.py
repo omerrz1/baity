@@ -5,7 +5,7 @@ urlpatterns = [
     path('create/', views.CreateOwner.as_view(), name='create-owner'),
     path('update/up/<int:id>/', views.UpdateOwner_username_phone.as_view(), name='update-username-phone'),
     path('update/email/<int:id>/', views.UpdateOwner_email.as_view(), name='updatae-email'),
-    path('delete/<str:username>/', views.DeleteOwner.as_view(), name='dlete-owner'),
+    path('delete/<str:email>/', views.DeleteOwner.as_view(), name='delete-owner'),
     path('detail/<str:username>/',
          views.ownerDetail.as_view(), name='owner-details'),
     path('verify/', views.verify_OTP, name='verify-OTP'),

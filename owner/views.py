@@ -114,7 +114,7 @@ class ownersList(generics.ListAPIView):
 class DeleteOwner(generics.DestroyAPIView):
     queryset = owner.objects.all()
     serializer_class = OwnerSerializer
-    lookup_field = 'username'
+    lookup_field = 'email'
     permission_classes = [permissions.IsAuthenticated]
 
 # owner details view
