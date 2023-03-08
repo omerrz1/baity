@@ -178,9 +178,9 @@ def Update_password(request, *args,**KWargs):
     if serialzer.is_valid():
         body= request.data
         new_password = body['password']
-        # password = user.set_password(new_password)
+        password = user.set_password(new_password)
         user.save()
-        return Response({'password': 'password'})
+        return Response({'password': password})
     return Response({'error':'something went wrong'})
         
 
