@@ -175,7 +175,7 @@ def Update_password(request, *args,**KWargs):
     id = user.id
     print('!!! id = ',id)
     serialzer =update_pass_serializer(data=request.data)
-    if serialzer.is_valid():
+    if serialzer.is_valid(raise_exception=True):
         body= request.data
         new_password = body['password']
         password = user.set_password(new_password)
