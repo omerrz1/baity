@@ -175,10 +175,10 @@ def Update_password(request):
     serialzer =update_pass_serializer(data=request.data)
     if serialzer.is_valid():
         body= request.data
-        password = body['password']
-        user.set_password(password)
+        new_password = body['password']
+        password = user.set_password(new_password)
         user.save()
-        return Response({'password': 'changed'})
+        return Response({'password': password})
     return Response({'error':'something went wrong'})
         
 
