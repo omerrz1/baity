@@ -170,7 +170,7 @@ class UpdateOwner_email(generics.UpdateAPIView):
 @permission_classes([permissions.IsAuthenticated])
 @authentication_classes([authentication.TokenAuthentication])
 @api_view(["PUT"])
-def Update_password(request):
+def Update_password(request, *args,**KWargs):
     user = request.user
     id = user.id
     print('!!! id = ',id)
@@ -178,9 +178,9 @@ def Update_password(request):
     if serialzer.is_valid():
         body= request.data
         new_password = body['password']
-        password = user.set_password(new_password)
+        # password = user.set_password(new_password)
         user.save()
-        return Response({'password': password})
+        return Response({'password': 'password'})
     return Response({'error':'something went wrong'})
         
 
