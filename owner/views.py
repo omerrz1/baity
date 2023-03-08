@@ -172,6 +172,8 @@ class UpdateOwner_email(generics.UpdateAPIView):
 @api_view(["PUT"])
 def Update_password(request):
     user = request.user
+    id = user.id
+    print('!!! id = ',id)
     serialzer =update_pass_serializer(data=request.data)
     if serialzer.is_valid():
         body= request.data
