@@ -50,3 +50,11 @@ class update_email_serializer(serializers.ModelSerializer):
         fields=[
             'email'
         ]
+
+
+class update_pass_serializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields=[
+            'password'
+        ]

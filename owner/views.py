@@ -1,5 +1,5 @@
 # importing serializers
-from .serializers import OwnerSerializer, ownerDetailsserializer,OTPSerializer, update_email_serializer,Update_username_phone_serializer
+from .serializers import OwnerSerializer, ownerDetailsserializer,OTPSerializer, update_email_serializer,Update_username_phone_serializer,update_pass_serializer
 from rest_framework import generics, permissions,authentication
 from rest_framework.response import Response
 from .emails import send_OTP
@@ -166,6 +166,21 @@ class UpdateOwner_email(generics.UpdateAPIView):
         qs = qs.filter(id =id)
         return qs
 
+# update password
+@permission_classes([permissions.IsAuthenticated])
+@authentication_classes([authentication.TokenAuthentication])
+@api_view(["PUT"])
+def Update_password(request):
+    user = request.user
+    serialzer =update_pass_serializer(data=request.data)
+    if serialzer.is_valid():
+        body= request.data
+        password = body['password']
+        user.set_password(password)
+        user.save()
+        return Response({'password': 'changed'})
+    return Response({'error':'something went wrong'})
+        
 
 
 class MyProfile(generics.ListAPIView):
