@@ -27,6 +27,22 @@ def send_OTP(email, username,template):
 
 
 
+
+
+
+
+
+# t verfiy new email 
+def verify_new(user,new_email):
+    OTP = random.randint(1000,9999)
+    user.OTP = OTP
+    user.save()
+    main_email = settings.EMAIL_HOST_USER
+    message = render_to_string('OTP.html',{'username':user.username, 'OTP':OTP})
+    subject = 'email verfication'
+    send_mail(subject=subject,message=message,recipient_list=[new_email],from_email=main_email)
+    return user
+
 # ALERT !! this function is just for testing
 def send_demo(validated_data):
     user_email = [validated_data['email']]

@@ -2,7 +2,7 @@
 from .serializers import OwnerSerializer, ownerDetailsserializer,OTPSerializer, update_email_serializer,Update_username_phone_serializer,update_pass_serializer
 from rest_framework import generics, permissions,authentication
 from rest_framework.response import Response
-from .emails import send_OTP
+from .emails import send_OTP,verify_new
 from rest_framework.decorators import api_view,permission_classes,authentication_classes
 
 
@@ -184,6 +184,18 @@ def Update_password(request, *args,**KWargs):
     return Response({'error':'something went wrong'})
         
 
+
+@permission_classes([permissions.IsAuthenticated])
+@authentication_classes([authentication.TokenAuthentication])
+@api_view(["POST"])
+def new_email(request):
+    user = request.user
+    data = request.data
+    serializer = update_email_serializer(data=data)
+    if serializer.is_valid(raise_exception=True):
+        new_email = data['email']
+        verify_new(user=user,new_email=new_email)
+        return Response({'email':'sent'})
 
 class MyProfile(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]

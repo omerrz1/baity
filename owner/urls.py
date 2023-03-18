@@ -13,5 +13,6 @@ urlpatterns = [
     path('verify/', views.verify_OTP, name='verify-OTP'),
     path('', views.ownersList.as_view(), name='owners'),
     path('verify-email/',views.verfiy_email, name='email-otp'),
-    path('profile/',views.MyProfile.as_view(), name="my-profile")
+    path('profile/',views.MyProfile.as_view(), name="my-profile"),
+    path('new-email/',views.new_email , name='new-emal')
 ]
