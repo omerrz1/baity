@@ -195,7 +195,7 @@ def new_email(request):
     if serializer.is_valid(raise_exception=True):
         new_email = data['email']
         verify_new(user=user,new_email=new_email)
-        return Response({'email':'sent'})
+        return Response({'email':['sent']})
 
 class MyProfile(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
