@@ -16,6 +16,9 @@ class House(models.Model):
     rent = models.BooleanField(default=True)
     sell = models.BooleanField(default=False)
 
+    def contact (self):
+        return self.owner.phone
+
     def __str__(self):
         return self.address
 
@@ -24,6 +27,7 @@ class photo(models.Model):
     photo = models.ImageField(upload_to='media')
     house = models.ForeignKey(
         House, related_name='photos', on_delete=models.CASCADE)
+
 
     def __str__(self):
         return str(self.photo)

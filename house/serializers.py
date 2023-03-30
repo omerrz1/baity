@@ -27,6 +27,7 @@ class houseserializer(serializers.ModelSerializer):
             'sell',
             'rent',
             'owner',
+            'contact',
             'area',
             'address',
             'description',
