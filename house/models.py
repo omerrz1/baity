@@ -13,6 +13,8 @@ class House(models.Model):
     bed_rooms = models.IntegerField(default=0)
     bath_rooms = models.IntegerField(default=0)
     living_rooms = models.IntegerField(default=0)
+    rent = models.BooleanField(default=True)
+    sell = models.BooleanField(default=False)
 
     def __str__(self):
         return self.address
