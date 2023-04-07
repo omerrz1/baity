@@ -35,7 +35,7 @@ body{
 .button:hover{
     padding: 10px;
     border-style: solid;
-    border-radius: 20%;
+    border-radius: 20;
     padding: 7px;
     border-width: .5px;
     border-color: white;
