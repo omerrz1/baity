@@ -13,8 +13,7 @@ class House(models.Model):
     bed_rooms = models.IntegerField(default=0)
     bath_rooms = models.IntegerField(default=0)
     living_rooms = models.IntegerField(default=0)
-    rent = models.BooleanField(default=True)
-    sell = models.BooleanField(default=False)
+    status = models.CharField(max_length=64, default='rent', null=True)
 
     def contact (self):
         return self.owner.phone
