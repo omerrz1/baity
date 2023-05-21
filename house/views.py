@@ -26,10 +26,6 @@ class Myhouses(generics.ListAPIView):
         user = self.request.user
         qs = super().get_queryset()
         qs = qs.filter(owner=user)
-        qs = list(qs)
-        for house in qs:
-            if len(house.photos) <1:
-                house.delete()
         return qs
 
 
