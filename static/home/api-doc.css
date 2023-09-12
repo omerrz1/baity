@@ -163,9 +163,9 @@ body{
 .doc-div{
     display: flex;
     flex-direction: column; /* Display items in a column */
-    justify-content: center; /* Center horizontally */
-    padding-top: 30px;
+    margin-top: 100px;
 
+    align-items: flex-start; /* Align text to the left */
     height: 100vh; 
     color: white; /* Text color */
     padding: 20px; 
