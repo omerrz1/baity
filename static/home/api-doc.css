@@ -164,7 +164,11 @@ body, .api-section {
 }
 
 /* Style the API documentation section */
-
+.doc-div{
+    width: 100%;
+    align-self: center;
+    align-items: center;
+}
 .api-section {
     width: 100%;
     align-self: center;
