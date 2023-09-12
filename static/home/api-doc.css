@@ -1,5 +1,137 @@
 /* Apply styles to the body */
+body{
+    padding: 0;
+    margin: 0;
 
+    background-image: url('docsbg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size:cover;
+    backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
+    color: white;
+}
+body, .api-section {
+    color: white ;
+}
+
+.nave{
+    display: flex;
+    margin-top: 1%;
+    justify-content:space-between;
+}
+
+.buttons{
+    display: flex;
+    top: 4%;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+
+.button{
+    font-size: 18;
+    margin-left: 2%;
+    margin-right: 2%;
+    color: white;
+    text-decoration: none;
+    transition-duration: .4s;
+}
+
+
+.button:hover{
+    padding: 10px;
+    border-style: solid;
+    border-radius: 20;
+    padding: 7px;
+    border-width: .5px;
+    border-color: white;
+    box-shadow: 0px 0px 40px 0px;
+}
+
+.logo{
+    justify-content: flex-start;
+    align-items: center;
+    top: 2%;
+    height: 4%;
+    width: 4%;
+}
+
+.menu{
+    position:absolute;
+    top: 2%;
+    right: 3%;
+    height: 6%;
+    width: 9%;
+    opacity: 0;
+}
+
+
+@media (max-width:600px) {
+
+    .logo{
+        height: 10%;
+        width: 10%;
+    }
+    .menu{
+        opacity: 1;
+        transition-duration: .7s;
+    }
+    
+
+    .menu.active{
+        display: flex;
+        transform: rotate(.25turn);
+        transition-duration: .6s;
+    }
+
+    .nave{
+        flex-direction: column;
+    }
+    .buttons{
+        transition-duration: .5s;
+        opacity: 0;
+        width: 40%;
+        border-width:1px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top:3%;
+        padding: 2%;
+        margin-left: 35%;
+        border-radius: 5%;
+    }
+    .buttons.active{
+        transition-duration: .8s;
+        display: flex;
+        width: 50%;
+        opacity: 1;
+        border-width:1px;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-left: 40%;
+        margin-top:3%;
+        padding: 2%;
+        border-radius: 5%;
+    }
+
+    .button{
+        transition-duration: .7s;
+        width: 70%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        border-color: skyblue;
+        border-width: 1px;
+        border-radius: 10px;
+        border-color: skyblue;
+        border-style: solid;
+        padding: 3%;
+        margin-top: 6%;
+    }
+    
+}
 /* Style the navigation bar */
 .nav {
 
