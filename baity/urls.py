@@ -24,5 +24,6 @@ urlpatterns = [
     path('team/', admin.site.urls),
     path('auth/', obtain_auth_token),
     path('owners/', include('owner.urls')),
-    path('house/', include('house.urls'))
+    path('house/', include('house.urls')),
+    path('ai/', include('aimodels.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
