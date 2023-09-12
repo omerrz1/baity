@@ -163,7 +163,6 @@ body{
 .doc-div{
     display: flex;
     justify-content: center; /* Center vertically */
-    height: 100vh;
     font-family: "Arial", sans-serif; /* Use a modern font of your choice */
 }
 .api-section {
