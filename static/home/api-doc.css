@@ -171,9 +171,6 @@ body, .api-section {
     background-color: black;
 }
 .api-section {
-    width: 100%;
-    align-self: center;
-    align-items: center;
     color: white;
     padding: 20px;
     border-radius: 10px;
