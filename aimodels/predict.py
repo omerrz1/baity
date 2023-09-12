@@ -1,8 +1,9 @@
 
 from keras.models import load_model
-from keras.preprocessing.sequence import pad_sequences
-import numpy  as np 
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+import numpy  as np
 import pickle
+
 
 def predictEmotion(text):
 
@@ -36,8 +37,8 @@ def predictEmotion(text):
     'surprise',
     'neutral']
 
-    model = load_model('mods/emotions.h5')
-    tokeniser = pickle.load(open('mods/emotions_tokeniser.pickle','rb'))
+    model = load_model('emotions.h5')
+    tokeniser = pickle.load(open('emotions_tokeniser.pickle','rb'))
 
     seq =tokeniser.texts_to_sequences([text])
     padded_seq = pad_sequences(seq,maxlen=50,padding='post')

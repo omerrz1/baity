@@ -6,7 +6,8 @@ from rest_framework.response import Response
 
 @api_view(['POST'])
 def emotionView(request,*args,**kwargs):
-    text = request.data[text]
+    text = request.data['text']
+    print("!!!!!text!!!!!!!!",text)
     emotion = predictEmotion(text)
     return Response({'emotion':emotion})
 
