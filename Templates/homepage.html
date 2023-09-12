@@ -34,27 +34,30 @@
         <p>HTTP Method: POST</p>
         <p>URL: `/create/`</p>
         <h3>example</h3>
-        <code>
-            const payload = new FormData();
-            if (username) {
-              payload.append("username", username.toLowerCase());
-            }
-            if (email) {
-              payload.append("email", email.toLowerCase());
-            }
-            payload.append("phone", parseInt(phone));
-            payload.append("password", password);
-            const ep = "https://www.baity.uk/owners/create/";
-            fetch(ep, {
-              method: "POST",
-              body: payload,
-            })
-              .then((response) => {
-                status = response.status;
-                return response.json();
-              })
-              .then(handle_data);
-        </code>
+        <pre>
+            <code>
+                const payload = new FormData();
+                if (username) {
+                  payload.append("username", username.toLowerCase());
+                }
+                if (email) {
+                  payload.append("email", email.toLowerCase());
+                }
+                payload.append("phone", parseInt(phone));
+                payload.append("password", password);
+                const ep = "https://www.baity.uk/owners/create/";
+                fetch(ep, {
+                  method: "POST",
+                  body: payload,
+                })
+                  .then((response) => {
+                    status = response.status;
+                    return response.json();
+                  })
+                  .then(handle_data);
+            </code>
+        </pre>
+       
         <!-- Add more details as needed -->
 
         <!-- Update Username and Phone Endpoint -->
