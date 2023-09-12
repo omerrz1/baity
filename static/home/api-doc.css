@@ -164,6 +164,7 @@ body{
     display: flex;
     flex-direction: column; /* Display items in a column */
     justify-content: center; /* Center horizontally */
+    padding-top: 30px;
     align-items: flex-start; /* Align text to the left */
     height: 100vh; 
     color: white; /* Text color */
