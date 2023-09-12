@@ -170,12 +170,13 @@ body, .api-section {
     align-items: center;
     justify-content: center; 
     align-items: center; 
+    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
 }
 .api-section {
     color: white;
     padding: 20px;
     border-radius: 10px;
-    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
+    
 }
 
 h2 {
