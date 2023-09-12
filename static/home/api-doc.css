@@ -162,8 +162,8 @@ body{
 /* Style the API documentation section */
 .doc-div{
     display: flex;
-    align-items: center; /* Center vertically */
-
+    justify-content: center; /* Center vertically */
+    height: 100vh;
     font-family: "Arial", sans-serif; /* Use a modern font of your choice */
 }
 .api-section {
