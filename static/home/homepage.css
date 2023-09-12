@@ -21,6 +21,17 @@ body{
     justify-content: flex-end;
     align-items: flex-start;
 }
+/* Set font color to white */
+body, .api-section {
+    color: white;
+}
+
+/* Add blurry background */
+body {
+    background-image: url('path-to-your-blurry-background-image.jpg');
+    background-size: cover;
+    backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
+}
 
 .button{
     font-size: 18;
