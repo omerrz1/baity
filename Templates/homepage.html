@@ -12,15 +12,103 @@
 </head>
 <body>
     <nav class="nav">
-            <img class="logo" src="{% static 'home/logo.png'%}" alt="website logo">
-
-            <img class="menu" src="{% static 'home/menu.png'%}"/>
-            
+        <img class="logo" src="{% static 'home/logo.png'%}" alt="website logo">
+        <img class="menu" src="{% static 'home/menu.png'%}"/>
+        
         <div class="buttons">
             <a class="button" href="">account</a>
             <a class="button" href="">contact</a>
             <a class="button" href="">about</a>
         </div>
     </nav>
+
+    <!-- API Documentation Section for "owners" Model -->
+    <section class="api-section">
+        <h2>API Documentation for "owners" Model</h2>
+
+        <!-- Create Owner Endpoint -->
+        <h3>Create Owner</h3>
+        <p>Create a new owner.</p>
+        <p>HTTP Method: POST</p>
+        <p>URL: `/create/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- Update Username and Phone Endpoint -->
+        <h3>Update Username and Phone</h3>
+        <p>Update the username and phone number of an owner by ID.</p>
+        <p>HTTP Method: PUT</p>
+        <p>URL: `/update/up/{id}/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- Update Email Endpoint -->
+        <h3>Update Email</h3>
+        <p>Update the email of an owner by ID.</p>
+        <p>HTTP Method: PUT</p>
+        <p>URL: `/update/email/{id}/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- Delete Owner Endpoint -->
+        <h3>Delete Owner</h3>
+        <p>Delete an owner by email.</p>
+        <p>HTTP Method: DELETE</p>
+        <p>URL: `/delete/{email}/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- Owner Details Endpoint -->
+        <h3>Owner Details</h3>
+        <p>Retrieve details of an owner by username.</p>
+        <p>HTTP Method: GET</p>
+        <p>URL: `/detail/{username}/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- Update Password Endpoint -->
+        <h3>Update Password</h3>
+        <p>Update the password of the authenticated owner.</p>
+        <p>HTTP Method: PUT</p>
+        <p>URL: `/update_password/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- Delete Me Endpoint -->
+        <h3>Delete My Account</h3>
+        <p>Delete the authenticated owner's account.</p>
+        <p>HTTP Method: POST</p>
+        <p>URL: `/deleteme/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- Verify OTP Endpoint -->
+        <h3>Verify OTP</h3>
+        <p>Verify the OTP code sent to the owner's email.</p>
+        <p>HTTP Method: POST</p>
+        <p>URL: `/verify/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- Verify Email Endpoint -->
+        <h3>Verify Email</h3>
+        <p>Resend the email verification OTP to the authenticated owner's email.</p>
+        <p>HTTP Method: GET</p>
+        <p>URL: `/verify-email/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- Owners List Endpoint -->
+        <h3>Owners List</h3>
+        <p>Retrieve a list of all owners.</p>
+        <p>HTTP Method: GET</p>
+        <p>URL: `/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- My Profile Endpoint -->
+        <h3>My Profile</h3>
+        <p>Retrieve the profile details of the authenticated owner.</p>
+        <p>HTTP Method: GET</p>
+        <p>URL: `/profile/`</p>
+        <!-- Add more details as needed -->
+
+        <!-- New Email Endpoint -->
+        <h3>New Email</h3>
+        <p>Change the email of the authenticated owner and request verification.</p>
+        <p>HTTP Method: POST</p>
+        <p>URL: `/new-email/`</p>
+        <!-- Add more details as needed -->
+    </section>
 </body>
 </html>
