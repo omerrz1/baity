@@ -165,6 +165,7 @@ body, .api-section {
 
 /* Style the API documentation section */
 .api-section {
+    align-items: center;
     color: white;
     padding: 20px;
     border-radius: 10px;
