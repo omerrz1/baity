@@ -1,10 +1,4 @@
-/* Apply styles to the body */
-body {
-    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
-    background-color: black; /* Maintain the black background */
-    color: white; /* White text color */
-    padding: 20px; /* Add some padding for readability */
-}
+
 
 /* Style the navigation bar */
 .nav {
@@ -39,22 +33,29 @@ body {
 
 /* Style the API documentation section */
 .api-section {
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    color: white;
     padding: 20px;
     border-radius: 10px;
+    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
 }
 
 h2 {
     font-size: 24px;
+    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
+    color: white;
 }
 
 h3 {
     font-size: 20px;
     margin-top: 20px;
+    color: white;
+    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
 }
 
 p {
     font-size: 16px;
+    color: white;
+    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
     margin-bottom: 10px;
 }
 
