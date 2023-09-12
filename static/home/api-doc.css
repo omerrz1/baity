@@ -13,6 +13,10 @@ body{
 }
 body, .api-section {
     color: white ;
+    align-self: center;
+    align-items: center;
+    justify-content: center; 
+    align-items: center;
 }
 
 .nave{
@@ -165,11 +169,10 @@ body, .api-section {
 
 /* Style the API documentation section */
 .doc-div{
-    width: 100%;
+
     align-self: center;
     align-items: center;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;  
     font-family: "Arial", sans-serif; /* Use a modern font of your choice */
 }
 .api-section {
