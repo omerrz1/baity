@@ -1,104 +1,61 @@
-/* Reset some default styles */
+/* Apply styles to the body */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    color:white;
+    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
+    background-color: black; /* Maintain the black background */
+    color: white; /* White text color */
+    padding: 20px; /* Add some padding for readability */
 }
 
-/* Center the entire content */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: transparent; /* Transparent background */
-}
-
-/* Style for the navigation bar */
+/* Style the navigation bar */
 .nav {
-    background: #333; /* Dark background color */
-    color: #fff; /* White text color */
+    background-color: black;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-    width: 100%;
-    position: fixed;
-    top: 0;
+    align-items: center;
+    padding: 10px;
 }
 
-/* Style for the logo and buttons in the navigation bar */
-.nav .logo {
+.logo {
     max-width: 100px;
-    height: auto;
 }
 
-.nav .buttons {
+.menu {
+    max-width: 30px;
+    cursor: pointer;
+}
+
+.buttons {
     display: flex;
     gap: 10px;
 }
 
-.nav .buttons .button {
-    color: #fff; /* White text color for buttons */
+.button {
     text-decoration: none;
+    color: white;
     padding: 5px 10px;
-    border: 1px solid #fff; /* White border for buttons */
+    border: 1px solid white;
     border-radius: 5px;
-    transition: background-color 0.3s, border-color 0.3s;
 }
 
-.nav .buttons .button:hover {
-    background-color: #fff; /* White background on hover */
-    color: #333; /* Text color on hover */
-}
-
-/* Style for the API documentation section */
+/* Style the API documentation section */
 .api-section {
-    background: transparent; /* Transparent background */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
     padding: 20px;
-    margin-top: 60px; /* Adjust the margin as needed */
-    border: 1px solid #ccc; /* Add a border for separation */
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-/* Style for section title */
-.section-title {
-    text-align: center;
+h2 {
     font-size: 24px;
-    margin-bottom: 20px;
 }
 
-/* Style for each API endpoint */
-.api-endpoint {
-    background: #f5f5f5; /* Light gray background */
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
+h3 {
+    font-size: 20px;
+    margin-top: 20px;
 }
 
-/* Style for code blocks */
-.code-block {
-    background: #fff; /* White background */
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 10px;
-    overflow-x: auto; /* Add horizontal scroll for long code blocks */
-}
-
-/* Style for code titles */
-.code-title {
-    font-size: 18px;
+p {
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
-/* Style for code examples */
-.code-example {
-    font-family: monospace;
-    font-size: 16px;
-}
-
-/* Add more specific styling as needed for your content */
+/* Add any additional styling as needed */
