@@ -1,9 +1,9 @@
 body{
     padding: 0;
     margin: 0;
-    background-image: url('bg.png');
+
+    background-image: url('docsbg.jpg');
     background-repeat: no-repeat;
-    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
     background-position: center;
     background-attachment: fixed;
     background-size:cover;
@@ -12,7 +12,6 @@ body{
 }
 body, .api-section {
     color: white ;
-    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
 }
 
 .nave{
