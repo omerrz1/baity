@@ -162,9 +162,10 @@ body{
 /* Style the API documentation section */
 .doc-div{
 
-    align-self: center;
-    align-items: center;
-    justify-content: center;  
+    display: flex;
+    justify-content: center; /* Center horizontally */
+     align-items: center; /* Center vertically */
+    height: 100vh;
     font-family: "Arial", sans-serif; /* Use a modern font of your choice */
 }
 .api-section {
