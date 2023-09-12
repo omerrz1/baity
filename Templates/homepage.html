@@ -6,10 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'home/homepage.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/api-doc.css' %}"> <!-- Link your new CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'api-doc.css' %}"> <!-- Link your new CSS file -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> <!-- Include a Google Font -->
     <script defer src="{% static 'home/logic.js'%}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>baity</title>
+    <title>API Documentation</title>
 </head>
 <body>
     <nav class="nav">
@@ -17,13 +18,13 @@
         <img class="menu" src="{% static 'home/menu.png'%}"/>
         
         <div class="buttons">
-            <a class="button" href="">account</a>
-            <a class="button" href="">contact</a>
-            <a class="button" href="">about</a>
+            <a class="button" href="">Account</a>
+            <a class="button" href="">Contact</a>
+            <a class="button" href="">About</a>
         </div>
     </nav>
 
-    <!-- Modern API Documentation Section for "owners" Model -->
+    <!-- API Documentation Section for "owners" Model -->
     <section class="api-section">
         <h2 class="section-title">API Documentation for "owners" Model</h2>
 
@@ -33,9 +34,10 @@
             <p>Create a new owner.</p>
             <p>HTTP Method: POST</p>
             <p>URL: `/create/`</p>
-            <p class="example-title">Python Example:</p>
-            <pre class="example-code">
-                <code>
+            <div class="code-block">
+                <h4 class="code-title">Python Example:</h4>
+                <pre class="code-example">
+                    <code>
 import requests
 
 url = 'https://your-api-url.com/create/'
@@ -47,11 +49,11 @@ data = {
 
 response = requests.post(url, data=data)
 print(response.status_code)
-                </code>
-            </pre>
-            <p class="example-title">JavaScript Example:</p>
-            <pre class="example-code">
-                <code>
+                    </code>
+                </pre>
+                <h4 class="code-title">JavaScript Example:</h4>
+                <pre class="code-example">
+                    <code>
 fetch('https://your-api-url.com/create/', {
     method: 'POST',
     headers: {
@@ -66,8 +68,141 @@ fetch('https://your-api-url.com/create/', {
 .then(response => {
     console.log(response.status);
 });
-                </code>
-            </pre>
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <!-- Update Username and Phone Endpoint -->
+        <div class="api-endpoint">
+            <h3>Update Username and Phone</h3>
+            <p>Update the username and phone number of an owner by ID.</p>
+            <p>HTTP Method: PUT</p>
+            <p>URL: `/update/up/{id}/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- Update Email Endpoint -->
+        <div class="api-endpoint">
+            <h3>Update Email</h3>
+            <p>Update the email of an owner by ID.</p>
+            <p>HTTP Method: PUT</p>
+            <p>URL: `/update/email/{id}/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- Delete Owner Endpoint -->
+        <div class="api-endpoint">
+            <h3>Delete Owner</h3>
+            <p>Delete an owner by email.</p>
+            <p>HTTP Method: DELETE</p>
+            <p>URL: `/delete/{email}/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- Owner Details Endpoint -->
+        <div class="api-endpoint">
+            <h3>Owner Details</h3>
+            <p>Retrieve details of an owner by username.</p>
+            <p>HTTP Method: GET</p>
+            <p>URL: `/detail/{username}/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- Update Password Endpoint -->
+        <div class="api-endpoint">
+            <h3>Update Password</h3>
+            <p>Update the password of the authenticated owner.</p>
+            <p>HTTP Method: PUT</p>
+            <p>URL: `/update_password/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- Delete Me Endpoint -->
+        <div class="api-endpoint">
+            <h3>Delete My Account</h3>
+            <p>Delete the authenticated owner's account.</p>
+            <p>HTTP Method: POST</p>
+            <p>URL: `/deleteme/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- Verify OTP Endpoint -->
+        <div class="api-endpoint">
+            <h3>Verify OTP</h3>
+            <p>Verify the OTP code sent to the owner's email.</p>
+            <p>HTTP Method: POST</p>
+            <p>URL: `/verify/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- Verify Email Endpoint -->
+        <div class="api-endpoint">
+            <h3>Verify Email</h3>
+            <p>Resend the email verification OTP to the authenticated owner's email.</p>
+            <p>HTTP Method: GET</p>
+            <p>URL: `/verify-email/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- Owners List Endpoint -->
+        <div class="api-endpoint">
+            <h3>Owners List</h3>
+            <p>Retrieve a list of all owners.</p>
+            <p>HTTP Method: GET</p>
+            <p>URL: `/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- My Profile Endpoint -->
+        <div class="api-endpoint">
+            <h3>My Profile</h3>
+            <p>Retrieve the profile details of the authenticated owner.</p>
+            <p>HTTP Method: GET</p>
+            <p>URL: `/profile/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
+        </div>
+
+        <!-- New Email Endpoint -->
+        <div class="api-endpoint">
+            <h3>New Email</h3>
+            <p>Change the email of the authenticated owner and request verification.</p>
+            <p>HTTP Method: POST</p>
+            <p>URL: `/new-email/`</p>
+            <!-- Add more details as needed -->
+            <div class="code-block">
+                <!-- Python and JavaScript examples here -->
+            </div>
         </div>
 
         <!-- Add more endpoints and examples as needed -->
