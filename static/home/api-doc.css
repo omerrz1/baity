@@ -163,29 +163,18 @@ body{
 .doc-div{
     display: flex;
     flex-direction: column; /* Display items in a column */
-    margin-top: 100px;
-
+    margin-top: 80px;
     align-items: flex-start; /* Align text to the left */
     height: 100vh; 
-    color: white; /* Text color */
     padding: 20px; 
     font-family: "Arial", sans-serif; 
 }
-.api-section {
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    align-self: center;
-    align-items: center;
-    justify-content: center;  
-    font-family: "Arial", sans-serif; /* Use a modern font of your choice */
-    
-}
+
 
 h2 {
     font-size: 24px;
     font-family: "Arial", sans-serif; /* Use a modern font of your choice */
-    color: white;
+    color: grey;
 }
 
 h3 {
@@ -198,7 +187,6 @@ h3 {
 p {
     font-size: 16px;
     color: white;
-    
     margin-bottom: 10px;
 }
 
