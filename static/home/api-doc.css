@@ -134,17 +134,7 @@ body{
     
 }
 /* Style the navigation bar */
-.nav {
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.logo {
-    max-width: 100px;
-}
 
 .menu {
     max-width: 30px;
