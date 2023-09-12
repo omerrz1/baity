@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'home/homepage.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/api-doc.css' %}"> <!-- Link your new CSS file -->
     <script defer src="{% static 'home/logic.js'%}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>baity</title>
@@ -22,93 +23,54 @@
         </div>
     </nav>
 
-    <!-- API Documentation Section for "owners" Model -->
+    <!-- Modern API Documentation Section for "owners" Model -->
     <section class="api-section">
-        <h2>API Documentation for "owners" Model</h2>
+        <h2 class="section-title">API Documentation for "owners" Model</h2>
 
         <!-- Create Owner Endpoint -->
-        <h3>Create Owner</h3>
-        <p>Create a new owner.</p>
-        <p>HTTP Method: POST</p>
-        <p>URL: `/create/`</p>
-        <!-- Add more details as needed -->
+        <div class="api-endpoint">
+            <h3>Create Owner</h3>
+            <p>Create a new owner.</p>
+            <p>HTTP Method: POST</p>
+            <p>URL: `/create/`</p>
+            <p class="example-title">Python Example:</p>
+            <pre class="example-code">
+                <code>
+import requests
 
-        <!-- Update Username and Phone Endpoint -->
-        <h3>Update Username and Phone</h3>
-        <p>Update the username and phone number of an owner by ID.</p>
-        <p>HTTP Method: PUT</p>
-        <p>URL: `/update/up/{id}/`</p>
-        <!-- Add more details as needed -->
+url = 'https://your-api-url.com/create/'
+data = {
+    'username': 'newuser',
+    'email': 'newuser@example.com',
+    'password': 'password123'
+}
 
-        <!-- Update Email Endpoint -->
-        <h3>Update Email</h3>
-        <p>Update the email of an owner by ID.</p>
-        <p>HTTP Method: PUT</p>
-        <p>URL: `/update/email/{id}/`</p>
-        <!-- Add more details as needed -->
+response = requests.post(url, data=data)
+print(response.status_code)
+                </code>
+            </pre>
+            <p class="example-title">JavaScript Example:</p>
+            <pre class="example-code">
+                <code>
+fetch('https://your-api-url.com/create/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        username: 'newuser',
+        email: 'newuser@example.com',
+        password: 'password123'
+    })
+})
+.then(response => {
+    console.log(response.status);
+});
+                </code>
+            </pre>
+        </div>
 
-        <!-- Delete Owner Endpoint -->
-        <h3>Delete Owner</h3>
-        <p>Delete an owner by email.</p>
-        <p>HTTP Method: DELETE</p>
-        <p>URL: `/delete/{email}/`</p>
-        <!-- Add more details as needed -->
-
-        <!-- Owner Details Endpoint -->
-        <h3>Owner Details</h3>
-        <p>Retrieve details of an owner by username.</p>
-        <p>HTTP Method: GET</p>
-        <p>URL: `/detail/{username}/`</p>
-        <!-- Add more details as needed -->
-
-        <!-- Update Password Endpoint -->
-        <h3>Update Password</h3>
-        <p>Update the password of the authenticated owner.</p>
-        <p>HTTP Method: PUT</p>
-        <p>URL: `/update_password/`</p>
-        <!-- Add more details as needed -->
-
-        <!-- Delete Me Endpoint -->
-        <h3>Delete My Account</h3>
-        <p>Delete the authenticated owner's account.</p>
-        <p>HTTP Method: POST</p>
-        <p>URL: `/deleteme/`</p>
-        <!-- Add more details as needed -->
-
-        <!-- Verify OTP Endpoint -->
-        <h3>Verify OTP</h3>
-        <p>Verify the OTP code sent to the owner's email.</p>
-        <p>HTTP Method: POST</p>
-        <p>URL: `/verify/`</p>
-        <!-- Add more details as needed -->
-
-        <!-- Verify Email Endpoint -->
-        <h3>Verify Email</h3>
-        <p>Resend the email verification OTP to the authenticated owner's email.</p>
-        <p>HTTP Method: GET</p>
-        <p>URL: `/verify-email/`</p>
-        <!-- Add more details as needed -->
-
-        <!-- Owners List Endpoint -->
-        <h3>Owners List</h3>
-        <p>Retrieve a list of all owners.</p>
-        <p>HTTP Method: GET</p>
-        <p>URL: `/`</p>
-        <!-- Add more details as needed -->
-
-        <!-- My Profile Endpoint -->
-        <h3>My Profile</h3>
-        <p>Retrieve the profile details of the authenticated owner.</p>
-        <p>HTTP Method: GET</p>
-        <p>URL: `/profile/`</p>
-        <!-- Add more details as needed -->
-
-        <!-- New Email Endpoint -->
-        <h3>New Email</h3>
-        <p>Change the email of the authenticated owner and request verification.</p>
-        <p>HTTP Method: POST</p>
-        <p>URL: `/new-email/`</p>
-        <!-- Add more details as needed -->
+        <!-- Add more endpoints and examples as needed -->
     </section>
 </body>
 </html>

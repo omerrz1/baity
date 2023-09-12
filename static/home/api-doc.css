@@ -1,0 +1,41 @@
+/* Center text in the section */
+.api-section {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the section title */
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Style individual API endpoints */
+.api-endpoint {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Style example titles */
+.example-title {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Style example code */
+.example-code {
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* Set the font family for the entire section (adjust as needed) */
+.api-section, .api-section p, .api-section h3 {
+    font-family: 'Arial', sans-serif;
+}
