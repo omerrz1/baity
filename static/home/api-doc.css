@@ -1,6 +1,8 @@
 /* Center text in the section */
+/* Make the section background transparent with a small blur */
 .api-section {
-    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for transparency */
+    backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
     padding: 20px;
 }
 
@@ -13,11 +15,10 @@
 
 /* Style individual API endpoints */
 .api-endpoint {
-    border: 1px solid #ccc;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #f9f9f9;
+
 }
 
 /* Style example titles */
@@ -28,7 +29,7 @@
 
 /* Style example code */
 .example-code {
-    background-color: #333;
+
     color: white;
     border-radius: 5px;
     padding: 10px;
