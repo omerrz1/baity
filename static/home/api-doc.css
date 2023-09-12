@@ -95,8 +95,9 @@ body{
         justify-content: space-between;
         margin-top:3%;
         padding: 2%;
-        margin-left: 35%;
+        margin-left: 25%;
         border-radius: 5%;
+        margin-right: 5%;
     }
     .buttons.active{
         transition-duration: .8s;
