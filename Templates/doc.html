@@ -118,7 +118,7 @@
             <code>
                 fetch("https://www.baity.uk/owners/update_password/", {
                     method: "PUT",
-                    body: payload,
+                    body: {password:password},
                     headers: {
                       Authorization: `token ${token}`,
                     },
@@ -136,6 +136,7 @@
         <h3>example</h3>
         <pre>
             <code>
+
                 function delete_me() {
                     fetch("https://www.baity.uk/owners/deleteme/", {
                       method: "GET",

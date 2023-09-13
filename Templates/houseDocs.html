@@ -55,10 +55,23 @@
         <h3>example</h3>
         <pre>
             <code>
+              //house data example
+              const house = new FormData();
+
+              house.append("address", address);
+              house.append("price", parseInt(price));
+              house.append("area", parseInt(area));
+              house.append("description", description);
+              house.append("living_rooms", living_rooms);
+              house.append("bath_rooms", bath_rooms);
+              house.append("bed_rooms", bed_rooms);
+              house.append("public", true);
+              house.append('status',house_status)
+
               const ep = "https://www.baity.uk/house/create/";
               fetch(ep, {
                 method: "POST",
-                body: house data,
+                body: house ,
                 headers: {
                   Authorization: `token ${token}`,
                 },
@@ -119,6 +132,19 @@
         <h3>example</h3>
         <pre>
             <code>
+              //house data example
+              const house = new FormData();
+
+              house.append("address", address);
+              house.append("price", parseInt(price));
+              house.append("area", parseInt(area));
+              house.append("description", description);
+              house.append("living_rooms", living_rooms);
+              house.append("bath_rooms", bath_rooms);
+              house.append("bed_rooms", bed_rooms);
+              house.append("public", true);
+              house.append('status',house_status)
+
               const endPoint = `https://www.baity.uk/house/update/${id}/`
               fetch(endPoint, {
                 method: "PUT",
