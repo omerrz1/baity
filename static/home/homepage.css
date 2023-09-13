@@ -118,6 +118,7 @@ body, .api-section {
         justify-content: center;
         align-items: center;
         width: 100%;
+        background-color: aqua;
     }
 
     .button{
