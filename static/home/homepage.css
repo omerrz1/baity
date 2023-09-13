@@ -113,6 +113,12 @@ body, .api-section {
         padding: 2%;
         border-radius: 5%;
     }
+    .vid{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 
     .button{
         transition-duration: .7s;
