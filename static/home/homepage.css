@@ -8,10 +8,9 @@ body{
     background-size:cover;
     backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
     color: white;
+    width: 100%;
 }
-body, .api-section {
-    color: white ;
-}
+
 
 .nave{
     display: flex;
