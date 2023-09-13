@@ -62,7 +62,13 @@ body{
     width: 9%;
     opacity: 0;
 }
+.vid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
 
+}
 
 @media (max-width:600px) {
 
@@ -112,13 +118,7 @@ body{
         padding: 2%;
         border-radius: 5%;
     }
-    .vid{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 300px;
-
-    }
+   
 
     .button{
         transition-duration: .7s;
