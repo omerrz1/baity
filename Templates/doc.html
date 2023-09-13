@@ -38,8 +38,6 @@
                 const payload = new FormData();
                 payload.append("username", username);
                 payload.append("password", password);
-                set_login_button_visiblity('none')
-                setloading('flex')
                 const ep = "https://www.baity.uk/auth/";
                 fetch(ep, {
                   method: "POST",
