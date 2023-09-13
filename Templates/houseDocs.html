@@ -1,0 +1,175 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/api-doc.css' %}"> <!-- Link your new CSS file -->
+    <script defer src="{% static 'home/logic.js'%}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baity</title>
+</head>
+<body >
+    <nav class="nav">
+        <img class="logo" src="{% static 'home/logo.png'%}" alt="website logo">
+        <img class="menu" src="{% static 'home/menu.png'%}"/>
+        
+        <div class="buttons">
+            <a class="button" href="https://www.baity.uk/">home</a>
+            <a class="button" href="https://www.baity.uk/docs">owners documentation</a>
+            <!-- <a class="button" href="">houses api endpoint </a> -->
+        </div>
+    </nav>
+
+    <!-- API Documentation Section for "owners" Model -->
+    <div class="doc-div">
+        <h2>API Documentation for Houses </h2>
+
+        <!-- Create Owner Endpoint -->
+        
+        <h3>List houses</h3>
+        <p>get a list of all the houses in the database.</p>
+        <p>HTTP Method: GET</p>
+        <p>URL: `house/`</p>
+        <h3>example</h3>
+        <pre>
+            <code>
+              const ep = "https://www.baity.uk/house/";
+              function get_houses() {
+                fetch(ep)
+                  .then((repsonse) => repsonse.json())
+                  .then((data) => SetHouses(data));
+              }
+            
+            </code>
+        </pre>
+       
+        <!-- Add more details as needed -->
+
+        <!-- Update Username and Phone Endpoint -->
+        <h3>Post House</h3>
+        <p>Post a new House to teh database</p>
+        <p>HTTP Method: POST</p>
+        <p>URL: `/house/Create/`</p>
+        <h3>example</h3>
+        <pre>
+            <code>
+              const ep = "https://www.baity.uk/house/create/";
+              fetch(ep, {
+                method: "POST",
+                body: house data,
+                headers: {
+                  Authorization: `token ${token}`,
+                },
+              })
+               
+            </code>
+        </pre>
+       
+
+        <!-- Delete Owner Endpoint -->
+        <h3>photos for a House</h3>
+        <p>post photos for a house</p>
+        <p>HTTP Method: POST</p>
+        <p>URL: `/house/photos/`</p>
+        <h3>example</h3>
+        <pre>
+            <code>
+              fetch("https://www.baity.uk/house/photos/", {
+                method: "POST",
+                body: photoData,
+              })
+                .then((response) => response.json())
+                .then((data) => console.log("successfully uloaded image ", data));
+            
+            </code>
+        </pre>
+
+
+        <!-- Update Password Endpoint -->
+        <h3>my Houses</h3>
+        <p>get a list of your houses</p>
+        <p>HTTP Method: GET</p>
+        <p>URL: `/house/mine/`</p>
+        <!-- Add more details as needed -->
+        <pre>
+            <code>
+              const mine_ep = "https://www.baity.uk/house/mine/";
+              fetch(mine_ep, {
+                method: "GEt",
+                headers: {
+                  Authorization: `token ${token}`,
+                },
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  SetHouseData(data);
+                  set_preview_list(data);
+                });
+            </code>
+        </pre>
+ 
+
+        <!-- My Profile Endpoint -->
+        <h3>update details</h3>
+        <p>update the details of a house</p>
+        <p>HTTP Method: PUT</p>
+        <p>URL: `/house/update/{id}/`</p>
+        <h3>example</h3>
+        <pre>
+            <code>
+              const endPoint = `https://www.baity.uk/house/update/${id}/`
+              fetch(endPoint, {
+                method: "PUT",
+                body: house,
+                headers: {
+                  Authorization: `token ${token}`,
+                },
+              })
+                .then((resp) => resp.json())
+                .then((data) => console.log("data: ", data));
+                .catch((err) => console.log(err));
+            </code>
+        </pre>
+        <!-- Add more details as needed -->
+
+        <h3>delete a House</h3>
+        <p>delete a house if its yours</p>
+        <p>HTTP Method: DELETE</p>
+        <p>URL: `/house/delete/{id}/`</p>
+        <h3>example</h3>
+        <pre>
+            <code>
+              const ep = `https://www.baity.uk/house/delete/${id}/`;
+              fetch(ep, {
+                method: "DELETE",
+                headers: {
+                  Authorization: `token ${token}`,
+                },
+              })
+            </code>
+        </pre>
+
+   <!-- Add more details as needed -->
+
+        <h3>Search for a house</h3>
+        <p>search for a house using the location or description</p>
+        <p>HTTP Method: GET</p>
+        <p>URL: `/house/search/?q=${query}/`</p>
+        <h3>example</h3>
+        <pre>
+            <code>
+              function getResults() {
+                fetch(`https://www.baity.uk/house/search/?q=${query}`)
+                  .then((Response) => Response.json())
+                  .then((data) => {
+                    setHouses(data);
+                  }); 
+              }
+            </code>
+        </pre>
+
+</div>
+</body>
+</html>

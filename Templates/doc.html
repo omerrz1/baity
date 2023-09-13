@@ -26,11 +26,35 @@
         <h2>API Documentation for "owners" Model</h2>
 
         <!-- Create Owner Endpoint -->
+        <h3>Auth Token</h3>
+        <p>Get Authentication Token</p>
+        <p>HTTP Method: POST</p>
+        <p>URL: `/auth/`</p>
+        <h3>example</h3>
+        <pre>
+            <code>
+              function get_Token() {
+                const payload = new FormData();
+                payload.append("username", username);
+                payload.append("password", password);
+                set_login_button_visiblity('none')
+                setloading('flex')
+                const ep = "https://www.baity.uk/auth/";
+                fetch(ep, {
+                  method: "POST",
+                  body: payload,
+                })
+                  .then((Response) => Response.json())
+                  .then((data) => handle_response(data));
+              }
+            </code>
+        </pre>
+       
         
         <h3>Create Owner</h3>
         <p>Create a new owner.</p>
         <p>HTTP Method: POST</p>
-        <p>URL: `/create/`</p>
+        <p>URL: `owners/create/`</p>
         <h3>example</h3>
         <pre>
             <code>
@@ -62,7 +86,7 @@
         <h3>Update Username and Phone</h3>
         <p>Update the username and phone number of an owner by ID.</p>
         <p>HTTP Method: PUT</p>
-        <p>URL: `/update/up/{id}/`</p>
+        <p>URL: `owners/update/up/{id}/`</p>
         <h3>example</h3>
         <pre>
             <code>
@@ -84,34 +108,12 @@
         </pre>
        
 
-        <!-- Delete Owner Endpoint -->
-        <h3>Delete Owner</h3>
-        <p>Delete an owner by email.</p>
-        <p>HTTP Method: DELETE</p>
-        <p>URL: `/delete/{email}/`</p>
-        <h3>example</h3>
-        <pre>
-            <code>
-                function delete_me() {
-                    fetch("https://www.baity.uk/owners/deleteme/", {
-                      method: "GET",
-                      headers: {
-                        Authorization: `token ${user_token}`,
-                      },
-                    })
-                      .then((response) => response.json())
-                      .then((data) => console.log(data))
-                      .catch((e) => console.log(e));
-                  }
-            </code>
-        </pre>
-
 
         <!-- Update Password Endpoint -->
         <h3>Update Password</h3>
         <p>Update the password of the authenticated owner.</p>
         <p>HTTP Method: PUT</p>
-        <p>URL: `/update_password/`</p>
+        <p>URL: `owners/update_password/`</p>
         <!-- Add more details as needed -->
         <pre>
             <code>
@@ -131,7 +133,7 @@
         <h3>Delete My Account</h3>
         <p>Delete the authenticated owner's account.</p>
         <p>HTTP Method: POST</p>
-        <p>URL: `/deleteme/`</p>
+        <p>URL: `owners/deleteme/`</p>
         <h3>example</h3>
         <pre>
             <code>
@@ -157,7 +159,7 @@
         <h3>My Profile</h3>
         <p>Retrieve the profile details of the authenticated owner.</p>
         <p>HTTP Method: GET</p>
-        <p>URL: `/profile/`</p>
+        <p>URL: `owners/profile/`</p>
         <h3>example</h3>
         <pre>
             <code>

@@ -8,3 +8,6 @@ class HomePage(TemplateView):
 
 class docs(TemplateView):
     template_name = 'doc.html'
+
+class houseDocs(TemplateView):
+    template_name = 'houseDocs.html'
